@@ -9,7 +9,7 @@ public interface UsuarioDao {
 
     void cadastrar(Usuario usuario) throws DBException;
     void atualizar(Usuario usuario) throws DBException;
-    void remover(Usuario usuario) throws DBException;
+    void remover(int id) throws DBException;
     Usuario buscarPorNome(String nome);
     List<Usuario> listar();
 
