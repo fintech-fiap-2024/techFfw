@@ -5,7 +5,7 @@
 <head>
   <title>Mudar Senha</title>
   <link rel="stylesheet" href="../resources/css/bootstrap.css">
-  <link rel="stylesheet" href="../styles/alteraSenha.css"> <!-- Link para o CSS externo -->
+  <link rel="stylesheet" href="../styles/altera-senha.css"> <!-- Link para o CSS externo -->
 </head>
 <body>
   <c:set var="headerTitle" value="Alterar Senha"/>
