@@ -28,39 +28,33 @@ h1 {
 body {
     background-image: linear-gradient(#22064C,#490CA4);
 }
-.area-confi div{
-    width: 100%;
 
- }
-.area-confi{
+.password-dots {
     display: flex;
     justify-content: center;
+    margin: 10px 0;
 }
-.area-link {
-    margin-top: 50px;
-    margin-bottom: 40px;
-    margin-left: 60px;
-    margin-right: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #cccccc; /* Cor cinza clara */
+    border-radius: 50%;
+    margin: 0 5px;
 }
-.area-link div {
-    margin-left: 40px;
+
+/* Campo de input da senha */
+.input-senha {
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d3d3d3; /* Cor do campo de input */
+    font-size: 16px;
 }
-label {
-    color: var(--bs-light);
-}
-.texto-conf {
-    font-size: 50px;
-}
-.area-link .link-1{
-    flex: 1;
-}
-.area-link .link-2{
-    flex: 3;
-}
-.area-link .link-3 {
-    flex: 1;
-    margin-left: 50px;
+.label-senha {
+    font-size: 18px;
+    margin-top: 20px;
+    display: block;
 }
