@@ -64,20 +64,20 @@ h1 {
     height: 18px;
 }
 
-a {
+.menu-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     text-decoration: none;
     background: var(--bs-success);
-    width: 36px;
-    height: 36px;
+    width: 72px;
+    height: 72px;
 }
 
-a > img {
-    height: 24px;
-    width: 24px;
+.menu-icon > img {
+    height: 48px;
+    width: 48px;
 }
 
 .saldo {
@@ -89,4 +89,110 @@ a > img {
 .valor {
     font-weight: bold;
     font-size: 24px;
+}
+
+.menu-icons {
+    margin-top: 24px;
+}
+
+.menu-icons p {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.meu-cartao {
+    display: flex;
+    align-items: center;
+    background: var(--bs-success);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin: 24px 0;
+    text-decoration: none;
+    color: var(--bs-light);
+}
+
+.meu-cartao:hover {
+    background: #0a3622;
+}
+
+.meu-cartao > img,
+.investimentos > img {
+    margin: 8px;
+}
+
+.meu-cartao > p,
+.investimentos > p {
+    padding: 8px;
+    font-size: 20px;
+    margin: auto 0;
+    font-weight: bold;
+}
+
+.investimentos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bs-purple);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin: 24px 0;
+    text-decoration: none;
+    color: var(--bs-light);
+}
+
+.investimentos:hover {
+    background:  var(--bs-primary);
+}
+
+.investimentos > p {
+    margin-right: 8px;
+}
+
+.titulo,
+.novas-funcionalidades {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.titulo::after {
+    margin-left: 12px;
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: var(--bs-light);
+}
+
+.novas-funcionalidades::before {
+    margin-right: 12px;
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: var(--bs-light);
+}
+
+.valor-fatura,
+.proximo-pagamento {
+    font-weight: bold;
+}
+
+.limite {
+    color: var(--bs-gray);
+}
+
+hr {
+    height: 1px;
+    background: var(--bs-light);
+}
+
+a {
+    text-decoration: none;
+}
+
+.calendario,
+.relatorio {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
 }

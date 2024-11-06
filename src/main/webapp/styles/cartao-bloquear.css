@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Prata&display=swap');
+
+:root {
+    --bs-primary: #22064C !important;
+    --bs-secondary: #490CA4 !important;
+    --bs-success: #2DAE90 !important;
+    --bs-danger: #D72828 !important;
+    --bs-purple: #31006F !important;
+    --bs-light: #fff !important;
+    --bs-dark: #000 !important;
+    --bs-gray: #AFAFAF !important;
+    --bs-darkgray: #4c4c4c !important;
+}
+
+body {
+    background: linear-gradient(180deg, var(--bs-primary) 0%, var(--bs-secondary) 100%);
+    color: var(--bs-light);
+}
+
+main {
+    height: 100vh;
+    margin: 24px 12px;
+    background-color: rgb(217, 217, 217, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.voltar {
+    margin: 24px;
+    width: 18px;
+}
+
+h1 {
+    margin: 24px auto;
+}
+
+main p {
+    padding: 24px 0 0 12px;
+}
