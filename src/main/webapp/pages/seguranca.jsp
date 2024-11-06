@@ -5,7 +5,7 @@
     <title>Segurança</title>
   <link rel="stylesheet" href="../resources/css/bootstrap.css">
   <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href="../styles/altera-senha.css">
+  <link rel="stylesheet" href="../styles/confi.css">
 </head>
 <body>
 

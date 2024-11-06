@@ -5,7 +5,6 @@
     <title>Configuração</title>
     <link rel="stylesheet" href="../resources/css/bootstrap.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/confi.css">
 
 </head>
