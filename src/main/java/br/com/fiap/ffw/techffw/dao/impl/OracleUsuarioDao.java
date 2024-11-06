@@ -17,13 +17,14 @@ public class OracleUsuarioDao implements UsuarioDao {
         PreparedStatement stmt = null;
 
         Connection connection = ConnectionManager.getInstance().getConnection();
-        String sql = "INSERT INTO T_FFW_USUARIO (cod_usuario, nome_usuario, login, senha) VALUES (SQ_TB_USUARIO.NEXTVAL,?,?,?)";
+        String sql = "INSERT INTO T_FFW_USUARIO (cod_usuario, nome_completo, login, senha, cpf) VALUES (SQ_TB_USUARIO.NEXTVAL,?,?,?,?)";
 
         try {
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getLogin());
             stmt.setString(3, usuario.getSenha());
+            stmt.setString(4, usuario.getCpf());
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
