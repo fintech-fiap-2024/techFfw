@@ -19,61 +19,57 @@ body {
 }
 
 main {
+    height: 100vh;
     margin: 24px 12px;
     background-color: rgb(217, 217, 217, 0.1);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.menu-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.sair {
+.voltar {
     margin: 24px;
-    width: 32px;
-}
-
-.logo-img {
-    margin: 24px 12px;
-    width: 142px;
+    width: 18px;
 }
 
 h1 {
-    width: 60%;
-    border-radius: 0 0 8px 8px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 24px 8px;
-    text-align: center;
-    background: var(--bs-success);
+    margin: 24px auto;
 }
 
-.cartao {
-    margin-top: 64px;
+main p {
+    padding: 24px 0 0 12px;
 }
 
-.cartao-fisico {
-    width: 60%;
+.busca {
+    width: 100vw;
+    background: var(--bs-primary);
 }
 
-.cartao p {
 
+.pesquisa {
+    position: relative;
 }
 
-.icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    text-decoration: none;
-    background: var(--bs-success);
-    width: 72px;
-    height: 72px;
+.pesquisa input {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px 10px 10px 40px;
+    border: none;
+    background-color: var(--bs-primary);
+    color: var(--bs-light);
+    font-size: 16px;
+    outline: none;
 }
 
-.icon > img {
-    height: 48px;
-    width: 48px;
+.pesquisa input::placeholder {
+    color: var(--bs-gray);
+}
+
+.pesquisa-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #FFFFFF;
+    font-size: 18px;
+    pointer-events: none;
 }
