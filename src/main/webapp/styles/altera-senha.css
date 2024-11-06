@@ -66,6 +66,8 @@ form div {
     color: var(--bs-light);
     background-color: var(--bs-success);
     height: 60px;
+    font-size: 30px;
+    font-weight: bold;
 
 }
 

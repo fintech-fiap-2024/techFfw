@@ -19,25 +19,25 @@
 
             <div class="area-confi">
                 <a class="area-link d-flex align-items-center text-decoration-none text-dark" href="./perfil.jsp">
-                    <div class=" link-1 icone me-2"><img  class="w-75"  src="../assets/icons/dados-pessoais.svg"></div>
+                    <div class=" link-1 icone me-2"><img  width="60"  src="../assets/icons/dados-pessoais.svg"></div>
                     <div class=" link-2 me-2">
                         <label class="texto-conf fs-1">Dados Pesoais</label>
                         <br>
                         <label class="texto-conf fs-2">Informações gerais do usuário</label>
                     </div>
-                    <div class="link-3"><img class="" width="30" src="../assets/icons/dir.svg"></div>
+                    <div class="link-3"><img class="" width="20" src="../assets/icons/dir.svg"></div>
                 </a>
             </div>
 
             <div class="area-confi">
                 <a class="area-link d-flex align-items-center text-decoration-none text-dark" href="./seguranca.jsp">
-                    <div class=" link-1 icone me-2"><img  class="w-75" src="../assets/icons/seguranca.svg"></div>
+                    <div class=" link-1 icone me-2"><img  width="60" src="../assets/icons/seguranca.svg"></div>
                     <div class=" link-2 me-2">
                         <label class="texto-conf fs-1">Segurança</label>
                         <br>
                         <label class="texto-conf fs-2">Informações gerais do usuário</label>
                     </div>
-                    <div class="link-3"><img class="" width="30" src="../assets/icons/dir.svg"></div>
+                    <div class="link-3"><img class="" width="20" src="../assets/icons/dir.svg"></div>
                 </a>
             </div>
         </div>

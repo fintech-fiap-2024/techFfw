@@ -19,7 +19,7 @@
         <input  class="input-altera" type="text" id="senha" name="senha" placeholder="Nova senha" required>
       </div>
       <div class="d-flex flex-column justify-content-center align-items-center">
-        <button class="btn botao-altera" type="button">Cadastrar</button>
+        <button class="btn botao-altera" type="button">Salvar</button>
       </div>
     </form>
   </div>

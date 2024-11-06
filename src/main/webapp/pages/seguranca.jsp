@@ -18,21 +18,21 @@
 
     <div class="area-confi">
         <a class="area-link d-flex align-items-center text-decoration-none text-dark"  href="./mudar-senha.jsp">
-            <div class=" link-1 icone me-2"><img  class="w-75"  src="../assets/icons/alterar-senha.svg"></div>
+            <div class=" link-1 icone me-2"><img   width="60" src="../assets/icons/alterar-senha.svg"></div>
             <div class=" link-2 me-2">
                 <label class="texto-conf fs-1">Alterar Senha</label>
             </div>
-            <div class="link-3"><img class="" width="30" src="../assets/icons/dir.svg"></div>
+            <div class="link-3"><img class="" width="20" src="../assets/icons/dir.svg"></div>
         </a>
     </div>
 
     <div class="area-confi">
         <a class="area-link d-flex align-items-center text-decoration-none text-dark" href="#">
-            <div class=" link-1 icone me-2"><img  class="w-75 w-lg-100"  src="../assets/icons/faceid.svg"></div>
+            <div class=" link-1 icone me-2"><img  width="60"  src="../assets/icons/faceid.svg"></div>
             <div class=" link-2 me-2">
                 <label class="texto-conf fs-1">Ativar FaceId</label>
             </div>
-            <div class="link-3"><img class="" width="30" src="../assets/icons/dir.svg"></div>
+            <div class="link-3"><img class="" width="20" src="../assets/icons/dir.svg"></div>
         </a>
     </div>
 </div>
