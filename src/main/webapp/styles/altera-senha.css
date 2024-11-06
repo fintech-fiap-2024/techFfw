@@ -21,40 +21,49 @@
     color: var(--bs-light);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-}
-h1 {
-    font-size: 70px;
+    .titulo {
+        font-size: 40px;
+    }
+
 }
 body {
     background-image: linear-gradient(#22064C,#490CA4);
 }
 
-.password-dots {
+.area-form {
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin: 10px 0;
+}
+.label-altera {
+    color: var(--bs-light);
+    align-items: center;
+}
+form {
+    width: 500px;
+}
+form div {
+    width: 100%;
 }
 
-.dot {
-    width: 10px;
-    height: 10px;
-    background-color: #cccccc; /* Cor cinza clara */
-    border-radius: 50%;
-    margin: 0 5px;
-}
-
-/* Campo de input da senha */
-.input-senha {
+.label-altera,
+.input-altera,
+.botao-altera{
     width: 80%;
-    padding: 10px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #d3d3d3; /* Cor do campo de input */
-    font-size: 16px;
 }
-.label-senha {
-    font-size: 18px;
-    margin-top: 20px;
-    display: block;
+.label-altera {
+    font-size: 20px;
+    margin-top: 40px;
+}
+.input-altera {
+    height: 40px;
+}
+.botao-altera {
+    color: var(--bs-light);
+    background-color: var(--bs-success);
+    height: 60px;
+}
+
+.botao-altera:hover {
+
 }

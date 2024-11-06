@@ -5,18 +5,20 @@
     <title>Segurança</title>
   <link rel="stylesheet" href="../resources/css/bootstrap.css">
   <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href="../styles/confi.css">
+  <link rel="stylesheet" href="../styles/altera-senha.css">
 </head>
 <body>
 
-<c:set var="headerTitle" value="SEGURANÇA"/>
-<%@include file="header.jsp"%>
+<div class="header">
+    <h1 class="titulo">SEGURANÇA</h1>
+</div>
+
 
 <div class="d-lg-flex justify-content-evenly">
 
     <div class="area-confi">
-        <a class="area-link d-flex align-items-center text-decoration-none text-dark" href="#">
-            <div class=" link-1 icone me-2"><img  class="" width="100" src="../assets/icons/alterar-senha.svg"></div>
+        <a class="area-link d-flex align-items-center text-decoration-none text-dark"  href="./mudar-senha.jsp">
+            <div class=" link-1 icone me-2"><img  class="w-75"  src="../assets/icons/alterar-senha.svg"></div>
             <div class=" link-2 me-2">
                 <label class="texto-conf fs-1">Alterar Senha</label>
             </div>
@@ -26,7 +28,7 @@
 
     <div class="area-confi">
         <a class="area-link d-flex align-items-center text-decoration-none text-dark" href="#">
-            <div class=" link-1 icone me-2"><img  class="" width="100" src="../assets/icons/faceid.svg"></div>
+            <div class=" link-1 icone me-2"><img  class="w-75 w-lg-100"  src="../assets/icons/faceid.svg"></div>
             <div class=" link-2 me-2">
                 <label class="texto-conf fs-1">Ativar FaceId</label>
             </div>
