@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
 <head>
     <title>Cadastro</title>
@@ -12,9 +13,18 @@
     <div class="area-logo">
         <img class="img-logo mt-4" src="../assets/images/card.svg">
     </div>
+
+    <c:if test="${not empty mensagem}">
+        <div class="alert alert-success ms-2 me-2 m-auto">${mensagem}</div>
+    </c:if>
+
+    <c:if test="${not empty erro}">
+        <div class="alert alert-danger ms-2 me-2 m-auto">${erro}</div>
+    </c:if>
+
     <div class="area-login mx-2">
         <h2 class="fw-bold fs-4">Cadastre-se</h2>
-        <form action="/enviar" method="POST">
+        <form action="usuarios" method="post">
             <div class="input-container">
                 <label class="mb-2" for="nome">Digite seu nome completo:</label>
                 <input class="p-1 fs-5 rounded-2" type="text" id="nome" name="nome" placeholder="Nome completo" required>
@@ -35,7 +45,7 @@
                 <a href="../index.jsp">
                     <img src="../assets/icons/esq.svg">
                 </a>
-                <button class="btn" type="button">Cadastrar</button>
+                <input class="btn" type="submit" value="Salvar">
             </div>
             <div class="acesse-com-container">
                 <p class="acesse-com">Ou com</p>
