@@ -1,16 +1,95 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: bruno
-  Date: 05/11/2024
-  Time: 17:53
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/perfil.css">
 </head>
 <body>
 
+<div class="profile-header">
+    <div class="profile-icon">
+        <a href="URL_DO_DESTINO">
+            <img src="../assets/icons/camera.svg" alt="Icone da Câmera">
+        </a>
+    </div>
+    <h1>NOME DO USUÁRIO</h1>
+    <p>Ag. xxxx-x - Cc. xxxxx-x</p>
+</div>
+
+
+<div class="container my-4">
+    <div class="form-section">
+        <h2>DADOS DO USUÁRIO</h2>
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Nome:</label>
+                <input type="text" class="form-control" placeholder="Nome">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Sobrenome:</label>
+                <input type="text" class="form-control" placeholder="Sobrenome">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">CPF:</label>
+                <input type="text" class="form-control" placeholder="CPF">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">E-mail:</label>
+                <input type="email" class="form-control" placeholder="E-mail">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Telefone:</label>
+                <input type="tel" class="form-control" placeholder="Telefone">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Data de Nascimento:</label>
+                <input type="date" class="form-control">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container my-4">
+    <div class="form-section">
+        <h2>ENDEREÇO DO USUÁRIO</h2>
+        <form>
+            <div class="mb-3">
+                <label class="form-label">Logradouro:</label>
+                <input type="text" class="form-control" placeholder="Logradouro">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Bairro:</label>
+                <input type="text" class="form-control" placeholder="Bairro">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cidade:</label>
+                <input type="text" class="form-control" placeholder="Cidade">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Estado:</label>
+                <input type="text" class="form-control" placeholder="Estado">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Número:</label>
+                <input type="text" class="form-control" placeholder="Número">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Cep:</label>
+                <input type="text" class="form-control" placeholder="Cep">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="nav-icons">
+    <i class="bi bi-house-door-fill"></i>
+    <i class="bi bi-qr-code"></i>
+    <i class="bi bi-arrow-left-right"></i>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

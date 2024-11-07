@@ -1,0 +1,111 @@
+:root {
+    --bs-primary: #22064C !important;
+    --bs-secondary: #490CA4 !important;
+    --bs-success: #2DAE90 !important;
+    --bs-danger: #D72828 !important;
+    --bs-purple: #31006F !important;
+    --bs-light: #fff !important;
+    --bs-dark: #000 !important;
+    --bs-gray: #AFAFAF !important;
+    --bs-darkgray: #4c4c4c !important;
+}
+
+body {
+    background-color: var(--bs-primary);
+    color: var(--bs-light);
+}
+
+.deposit-header {
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.deposit-container {
+    background-color: var(--bs-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: var(--bs-light);
+    width: 90%; /* Faz o contêiner ocupar toda a largura */
+    min-height: calc(100vh - 150px); /* Ajusta para ocupar quase toda a altura */
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .deposit-container {
+        padding: 1rem; /* Reduz o padding em dispositivos médios */
+    }
+}
+
+@media (max-width: 576px) {
+    .deposit-container {
+        padding: 0.75rem; /* Reduz ainda mais o padding para dispositivos pequenos */
+    }
+}
+
+
+.deposit-container h2 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.balance-info {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.balance-info span {
+    font-weight: bold;
+    color: var(--bs-light);
+}
+
+.deposit-input {
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 1px solid var(--bs-light);
+    background: transparent;
+    color: var(--bs-light);
+    width: 100%;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    outline: none;
+}
+
+.copy-btn {
+    width: 100%;
+    background-color: var(--bs-success);
+    color: var(--bs-light);
+    font-weight: bold;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.qr-code-container {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.qr-code-container img {
+    width: 150px;
+    height: 150px;
+}
+
+.nav-icons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bs-primary);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.nav-icons i {
+    color: var(--bs-white);
+    font-size: 1.5rem;
+}
+

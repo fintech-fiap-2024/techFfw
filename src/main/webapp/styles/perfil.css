@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Prata&display=swap');
+
 :root {
     --bs-primary: #22064C !important;
     --bs-secondary: #490CA4 !important;
@@ -9,4 +11,89 @@
     --bs-dark: #000 !important;
     --bs-gray: #AFAFAF !important;
     --bs-darkgray: #4c4c4c !important;
+}
+
+body {
+    background-color: var(--bs-primary);
+    color: var(--bs-light);
+}
+
+.profile-header {
+    background-color: var(--bs-success);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.profile-header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.profile-icon {
+    width: 100px;
+    height: 100px;
+    background-color: var(--bs-secondary);
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.profile-icon img {
+    width: 50px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.profile-icon a img:hover {
+    transform: scale(1.1);
+}
+
+.camera-icon img {
+    width: 20px;
+    position: relative;
+    bottom: 0px;
+    right: 0;
+}
+
+.form-section {
+    background-color: var(--bs-secondary);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.form-section h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--bs-light);
+}
+
+.form-control {
+    background-color: var(--bs-light);
+    border: none;
+    color: var(--bs-light);
+}
+
+.form-control::placeholder {
+    color: var(--bs-gray);
+}
+
+.nav-icons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--bs-primary);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.nav-icons i {
+    color: var(--bs-light);
+    font-size: 1.5rem;
 }
