@@ -1,5 +1,10 @@
 package br.com.fiap.ffw.techffw.model;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+
+import static br.com.fiap.ffw.techffw.util.CriptografiaUtils.criptografar;
+
 public class Usuario {
     private int id;
     private String nome;
@@ -11,8 +16,12 @@ public class Usuario {
         this.id = id;
         this.nome = nome;
         this.login = login;
-        this.senha = senha;
+        setSenha(senha);
         this.cpf = cpf;
+    }
+    public Usuario(String email, String senha) {
+        this.nome = email;
+        setSenha(senha);
     }
 
     public int getId() {
@@ -44,7 +53,13 @@ public class Usuario {
     }
 
     public void setSenha(String senha) {
-        this.senha = senha;
+        try {
+            this.senha = criptografar(senha);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public String getCpf() {

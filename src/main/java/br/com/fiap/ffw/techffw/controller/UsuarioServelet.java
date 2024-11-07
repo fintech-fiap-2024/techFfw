@@ -41,11 +41,11 @@ public class UsuarioServelet extends HttpServlet {
             e.printStackTrace();
             req.setAttribute("erro", "Erro ao cadastrar usuario");
         }
-        req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        
     }
 }
