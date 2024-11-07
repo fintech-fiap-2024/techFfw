@@ -113,7 +113,7 @@ h1 {
 }
 
 .meu-cartao:hover {
-    background: #0a3622;
+    background-color: var(--bs-info);
 }
 
 .meu-cartao > img,

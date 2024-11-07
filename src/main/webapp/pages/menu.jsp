@@ -28,13 +28,13 @@
         <p class="valor">$ 5234,67</p>
         <div class="menu-icons d-flex flex-row justify-content-between justify-content-lg-around">
             <div class="d-flex flex-column align-items-center">
-                <a class="menu-icon" href="#">
+                <a class="menu-icon" href="movimentos.jsp">
                     <img src="../assets/icons/movimentos.svg">
                 </a>
                 <p>Movimentos</p>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <a class="menu-icon" href="#">
+                <a class="menu-icon" href="transferir1.jsp">
                     <img src="../assets/icons/transferir.svg">
                 </a>
                 <p>Transferir</p>

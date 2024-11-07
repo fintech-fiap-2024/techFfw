@@ -16,7 +16,25 @@
 body {
     background: linear-gradient(180deg, var(--bs-primary) 0%, var(--bs-secondary) 100%);
     color: var(--bs-light);
+}
 
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sair {
+    margin: 24px;
+    width: 32px;
+}
+
+.logo-img {
+    margin: 24px 12px;
+    width: 36px;
+}
+
+h1 {
+    margin: 24px auto;
 }
 
 main {
@@ -27,59 +45,40 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.voltar {
-    margin: 24px;
-    width: 18px;
+h2 {
+    padding: 8px;
 }
 
-h1 {
-    margin: 24px auto;
-}
-
-.busca {
-    width: 100vw;
-    background: var(--bs-primary);
-}
-
-
-.pesquisa {
-    position: relative;
-}
-
-.pesquisa input {
-    width: 100%;
-    margin-top: 12px;
-    padding: 10px 10px 10px 40px;
-    border: none;
-    background-color: var(--bs-primary);
-    color: var(--bs-light);
-    font-size: 16px;
-    outline: none;
-}
-
-.pesquisa input::placeholder {
+.saldo {
+    font-size: 24px;
+    padding: 0 8px;
     color: var(--bs-gray);
+
 }
 
-.pesquisa-icon {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    color: #FFFFFF;
+.saldo-valor {
+    font-weight: bold;
+    color: var(--bs-light);
+}
+
+input {
+    margin: 0 auto;
+    padding: 0 8px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--bs-gray);
+    outline: none;
+    box-sizing: border-box;
+    font-size: 24px;
+    color: var(--bs-light);
+    font-weight: bold;
+}
+
+.contatos {
+    margin: 24px 8px;
     font-size: 18px;
-    pointer-events: none;
-}
-
-.icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--bs-light);
-    box-shadow: 0 1px 1px 0 rgba(0.5, 0.5, 0.5, 0.1);
-    height: 40px;
-    width: 40px;
+    font-weight: lighter;
 }
 
 .icon-verde {
@@ -94,25 +93,6 @@ h1 {
     font-family: 'Prata', serif;
 }
 
-.icon > img {
-    height: 36px;
-    width: 36px;
-}
-
-.date {
-    color: var(--bs-gray);
-}
-
-.valor-positivo {
-    margin-right: 0;
-    border-radius: 6px;
-    padding: 2px 6px;
-    background-color: var(--bs-info);
-}
-
-@media (min-width: 764px) {
-    main {
-        margin: 12px auto;
-        max-width: 900px;
-    }
+.avancar > img {
+    margin: 24px auto;
 }
