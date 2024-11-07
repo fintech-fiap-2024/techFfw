@@ -59,7 +59,7 @@
             </div>
         </div>
         
-        <a class="d-flex align-content-end avancar" href="#">
+        <a class="d-flex align-content-end avancar" href="transferir2.jsp">
             <img src="../assets/icons/avancar.svg">
         </a>
     </main>
