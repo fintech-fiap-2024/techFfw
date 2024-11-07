@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
+    <c:if test="${not empty mensagem}">
+        <div class="alert alert-success ms-2 me-2 m-auto">${mensagem}</div>
+    </c:if>
+
+    <c:if test="${not empty erro}">
+        <div class="alert alert-danger ms-2 me-2 m-auto">${erro}</div>
+    </c:if>
     <div class="container d-flex flex-column flex-lg-row justify-content-evenly">
         <div class="area-logo">
             <img class="img-logo mt-4" src="assets/images/logo.svg">

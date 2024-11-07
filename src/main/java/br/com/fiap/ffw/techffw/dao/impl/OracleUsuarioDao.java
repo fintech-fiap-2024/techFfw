@@ -26,13 +26,11 @@ public class OracleUsuarioDao implements UsuarioDao {
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getLogin());
-            String senha = usuario.getSenha();
-            senha = criptografar(senha);
-            stmt.setString(3, usuario.getSenha());
+            stmt.setString(3, criptografar(usuario.getSenha()));
             stmt.setString(4, usuario.getCpf());
             stmt.executeUpdate();
 
-            System.out.println("Usuário registrado com sucesso");
+            System.out.println("Usuario registrado com sucesso");
 
         } catch (SQLException e) {
             throw new DBException(e);

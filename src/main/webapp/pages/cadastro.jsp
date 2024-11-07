@@ -14,17 +14,10 @@
         <img class="img-logo mt-4" src="../assets/images/card.svg">
     </div>
 
-    <c:if test="${not empty mensagem}">
-        <div class="alert alert-success ms-2 me-2 m-auto">${mensagem}</div>
-    </c:if>
-
-    <c:if test="${not empty erro}">
-        <div class="alert alert-danger ms-2 me-2 m-auto">${erro}</div>
-    </c:if>
 
     <div class="area-login mx-2">
         <h2 class="fw-bold fs-4">Cadastre-se</h2>
-        <form action="usuarios" method="post">
+        <form method="post" action="/techFfw/usuarios">
             <div class="input-container">
                 <label class="mb-2" for="nome">Digite seu nome completo:</label>
                 <input class="p-1 fs-5 rounded-2" type="text" id="nome" name="nome" placeholder="Nome completo" required>

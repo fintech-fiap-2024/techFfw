@@ -12,6 +12,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+
+import static br.com.fiap.ffw.techffw.util.CriptografiaUtils.criptografar;
 
 
 @WebServlet("/usuarios")
@@ -41,7 +44,7 @@ public class UsuarioServelet extends HttpServlet {
             e.printStackTrace();
             req.setAttribute("erro", "Erro ao cadastrar usuario");
         }
-        req.getRequestDispatcher("cadastro.jsp").forward(req, resp);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 
     @Override
