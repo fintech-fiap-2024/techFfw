@@ -33,42 +33,24 @@ h1 {
 }
 
 main {
-    height: fit-content;
+    height: 100vh;
     margin: 24px 12px;
     background-color: rgb(217, 217, 217, 0.1);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.quem {
-    margin: 24px 8px 8px;
-    color: var(--bs-gray);
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bs-success);
+    box-shadow: 0 1px 1px 0 rgba(0.5, 0.5, 0.5, 0.1);
+    height: 60px;
+    width: 60px;
 }
 
-.info-remetente,
-.info-beneficiario{
-    margin: 0 8px 8px;
-    padding: 2px;
-}
-
-.transferir {
-    text-decoration: none;
-    color: var(--bs-light);
-}
-
-.btn {
-    margin: 24px auto;
-    padding: 8px 36px;
-    width: fit-content;
-    color: var(--bs-light);
-    background-color: var(--bs-success);
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-}
-
-.btn:hover {
-    background-color: var(--bs-info);
-}
 
 @media (min-width: 764px) {
     main {

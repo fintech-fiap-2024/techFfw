@@ -34,7 +34,7 @@
                 </div>
                 <img src="../assets/icons/dir.svg">
             </a>
-            <a href="transferir1.jsp" class="plus d-flex justify-content-around align-items-center m-3">
+            <a href="transferir-conta.jsp" class="plus d-flex justify-content-around align-items-center m-3">
                 <div class="icon d-flex">
                     <img src="../assets/icons/plus.svg">
                     <div class="d-flex flex-column justify-content-center ms-4 pt-2">

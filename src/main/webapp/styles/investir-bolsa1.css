@@ -28,8 +28,20 @@ body {
     width: 18px;
 }
 
+.logo-img {
+    margin: 24px 12px;
+    width: 36px;
+}
+
 h1 {
     margin: 24px auto;
+}
+
+h2 {
+    padding: 12px;
+    font-weight: bold;
+    background-color: var(--bs-primary);
+    border-radius: 8px;
 }
 
 main {
@@ -40,39 +52,37 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.quem {
-    margin: 24px 8px 8px;
-    color: var(--bs-gray);
-}
-
-.info-remetente,
-.info-beneficiario{
-    margin: 0 8px 8px;
-    padding: 2px;
-}
-
-.transferir {
+.acao {
     text-decoration: none;
     color: var(--bs-light);
 }
 
-.btn {
-    margin: 24px auto;
-    padding: 8px 36px;
-    width: fit-content;
-    color: var(--bs-light);
-    background-color: var(--bs-success);
-    font-weight: bold;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bs-light);
+    box-shadow: 0 1px 1px 0 rgba(0.5, 0.5, 0.5, 0.1);
+    height: 60px;
+    width: 60px;
 }
 
-.btn:hover {
-    background-color: var(--bs-info);
+img {
+    height: 42px;
+    width: 42px;
 }
+
+.info {
+    color: var(--bs-gray);
+    font-size: 12px;
+    font-weight: bold;
+}
+
 
 @media (min-width: 764px) {
     main {
         margin: 12px auto;
-        max-width: 600px;
+        max-width: 900px;
     }
 }
