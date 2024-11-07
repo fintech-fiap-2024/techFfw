@@ -5,9 +5,13 @@ import br.com.fiap.ffw.techffw.dao.UsuarioDao;
 import br.com.fiap.ffw.techffw.exception.DBException;
 import br.com.fiap.ffw.techffw.model.Usuario;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import static br.com.fiap.ffw.techffw.util.CriptografiaUtils.criptografar;
 
 public class OracleUsuarioDao implements UsuarioDao {
 
@@ -22,6 +26,8 @@ public class OracleUsuarioDao implements UsuarioDao {
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getLogin());
+            String senha = usuario.getSenha();
+            senha = criptografar(senha);
             stmt.setString(3, usuario.getSenha());
             stmt.setString(4, usuario.getCpf());
             stmt.executeUpdate();
@@ -30,6 +36,10 @@ public class OracleUsuarioDao implements UsuarioDao {
 
         } catch (SQLException e) {
             throw new DBException(e);
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
         } finally {
             try{
                 stmt.close();

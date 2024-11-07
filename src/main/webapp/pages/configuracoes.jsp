@@ -10,10 +10,12 @@
 </head>
 <body>
 
-        <div class="header">
-            <h1 class="titulo">CONFIGURAÇÃO</h1>
-        </div>
-
+        <header class="d-flex header">
+            <a href="menu.jsp">
+                <img class="voltar" src="../assets/icons/esq.svg">
+            </a>
+            <h1 class="titulo">CONFIGURAÇÕES</h1>
+        </header>
 
         <div class="d-lg-flex justify-content-evenly">
 

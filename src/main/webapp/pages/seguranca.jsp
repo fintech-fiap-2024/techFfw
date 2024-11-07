@@ -9,9 +9,12 @@
 </head>
 <body>
 
-<div class="header">
+<header class="d-flex header">
+    <a href="configuracoes.jsp">
+        <img class="voltar" src="../assets/icons/esq.svg">
+    </a>
     <h1 class="titulo">SEGURANÇA</h1>
-</div>
+</header>
 
 
 <div class="d-lg-flex justify-content-evenly">

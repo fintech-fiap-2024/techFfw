@@ -11,7 +11,7 @@
     --bs-darkgray: #4c4c4c !important;
 }
 
-.header {
+header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,8 +24,13 @@
     border-bottom-right-radius: 10px;
     .titulo {
         font-size: 40px;
+        margin-left: 40px;
     }
 
+}
+.voltar {
+    margin: 24px;
+    width: 18px;
 }
 body {
     background-image: linear-gradient(#22064C,#490CA4);

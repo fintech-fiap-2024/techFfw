@@ -9,9 +9,12 @@
 </head>
 <body>
 
-  <div class="header">
-    <h1 class="titulo">ALTERA SENHA</h1>
-  </div>
+  <header class="d-flex header">
+    <a href="seguranca.jsp">
+      <img class="voltar" src="../assets/icons/esq.svg">
+    </a>
+    <h1 class="titulo">ALTERAR SENHA</h1>
+  </header>
   <div class="area-form">
     <form action="" method="post">
       <div class=" d-flex flex-column justify-content-center align-items-center">
@@ -23,6 +26,7 @@
       </div>
     </form>
   </div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
