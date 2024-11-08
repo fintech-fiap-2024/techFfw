@@ -36,9 +36,9 @@
             <p><span class="fw-bold">CPF: </span> ***.444.058-**</p>
             <p><span class="fw-bold">Instituição: </span> Santander LTDA</p>
         </div>
-
-
-
+        <a class="transferir d-flex justify-content-center" href="transferir-aprovado.jsp">
+            <button class="btn" type="submit">Transferir</button>
+        </a>
     </main>
 </body>
 </html>
