@@ -149,7 +149,7 @@ public class OracleUsuarioDao implements UsuarioDao {
         Connection connection = ConnectionManager.getInstance().getConnection();
 
         try {
-            String sql = "SELECT * FROM T_FFW_USUARIO WHERE nome_completo = ?";
+            String sql = "SELECT * FROM T_FFW_USUARIO WHERE login = ?";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, nome);
             rs = stmt.executeQuery();

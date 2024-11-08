@@ -11,6 +11,13 @@ public class Usuario {
     private String login;
     private String senha;
     private String cpf;
+    private float limiteDisponivel;
+    private String proximoPagamento;
+    private int saldo;
+    private int agencia, contaCorrente;
+    private Endereco endereco;
+
+
 
     public Usuario(int id, String nome, String login, String senha, String cpf) {
         this.id = id;
@@ -18,7 +25,42 @@ public class Usuario {
         this.login = login;
         setSenha(senha);
         this.cpf = cpf;
+        this.limiteDisponivel = 10000;
+        this.proximoPagamento = "24 Dez";
+        this.saldo = 1000;
+        this.agencia = 1234-5;
+        this.contaCorrente = 123456;
+        this.endereco = null;
     }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public float getLimiteDisponivel() {
+        return limiteDisponivel;
+    }
+
+    public String getProximoPagamento() {
+        return proximoPagamento;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public int getContaCorrente() {
+        return contaCorrente;
+    }
+
     public Usuario(String email, String senha) {
         this.login = email;
         setSenha(senha);

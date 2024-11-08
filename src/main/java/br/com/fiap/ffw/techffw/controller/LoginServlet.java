@@ -1,6 +1,7 @@
 package br.com.fiap.ffw.techffw.controller;
 
 import br.com.fiap.ffw.techffw.dao.UsuarioDao;
+import br.com.fiap.ffw.techffw.dao.impl.OracleUsuarioDao;
 import br.com.fiap.ffw.techffw.factory.DaoFactory;
 import br.com.fiap.ffw.techffw.model.Usuario;
 import jakarta.servlet.ServletConfig;
@@ -27,19 +28,18 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("email");
         String password = req.getParameter("senha");
 
-        Usuario temp = new Usuario(username, password);
+        Usuario userValidator = new Usuario(username, password);
 
-        if(user.validarUsuario(temp)) {
+        if(user.validarUsuario(userValidator)) {
             HttpSession session = req.getSession();
-            session.setAttribute("user", username);
+            UsuarioDao userLoggedDAO = new OracleUsuarioDao();
+            Usuario userLogged = userLoggedDAO.buscarPorNome(username);
+            session.setAttribute("user", userLogged);
             resp.sendRedirect("pages/menu.jsp");
-            System.out.println("Usuario encontrado");
         }else {
             req.setAttribute("erro","Usuario e/ou senha incorretos");
             req.getRequestDispatcher("index.jsp").forward(req, resp);
         }
-
-
     }
 
     @Override
