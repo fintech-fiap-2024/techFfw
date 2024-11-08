@@ -20,7 +20,7 @@ public class OracleUsuarioDao implements UsuarioDao {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-        System.out.println("Buscando usuario: " + usuario.getLogin()+" senha: "+usuario.getSenha());
+//        System.out.println("Buscando usuario: " + usuario.getLogin()+" senha: "+usuario.getSenha());
 
         try {
             conexao = ConnectionManager.getInstance().getConnection();
