@@ -37,12 +37,7 @@ h1 {
     margin: 24px auto;
 }
 
-h2 {
-    padding: 12px;
-    font-weight: bold;
-    background-color: var(--bs-primary);
-    border-radius: 8px;
-}
+
 
 main {
     height: 100vh;
@@ -66,13 +61,8 @@ main {
     color: var(--bs-light);
 }
 
-.icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--bs-light);
-    box-shadow: 0 1px 1px 0 rgba(0.5, 0.5, 0.5, 0.1);
+.icone {
+    margin: 48px 60px 12px;
     height: 60px;
     width: 60px;
 }
@@ -82,10 +72,43 @@ img {
     width: 42px;
 }
 
+h3 {
+    margin: 64px 8px 12px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .info {
     color: var(--bs-gray);
     font-size: 12px;
     font-weight: bold;
+}
+
+.info-acao {
+    margin: 24px 8px;
+    font-size: 24px;
+}
+
+.comprar {
+    text-decoration: none;
+    color: var(--bs-light);
+}
+
+.btn {
+    margin: 24px auto;
+    padding: 8px 36px;
+    width: fit-content;
+    color: var(--bs-light);
+    text-decoration: none;
+    background-color: var(--bs-success);
+    font-weight: bold;
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: var(--bs-info);
 }
 
 

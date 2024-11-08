@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="menu-header">
-            <a href="transferir1.jsp">
+            <a href="menu.jsp">
                 <img class="voltar" src="../assets/icons/esq.svg">
             </a>
             <h1>Investir</h1>
@@ -23,11 +23,9 @@
         <div class="d-flex justify-content-center">
             <h2 class="my-4">Ações Brasileiras</h2>
         </div>
-
-
         <div class="ms-3 me-3">
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=ITUB4">
                     <div class="icon">
                         <img src="../assets/icons/itau.svg">
                     </div>
@@ -38,8 +36,8 @@
                 </a>
                 <p class="fw-bold">R$ 35,30</p>
             </div>
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=VALE3">
                     <div class="icon">
                         <img src="../assets/icons/vale.svg">
                     </div>
@@ -50,8 +48,8 @@
                 </a>
                 <p class="fw-bold">R$ 61,73</p>
             </div>
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=PTR4">
                     <div class="icon">
                         <img src="../assets/icons/petrobras.svg">
                     </div>
@@ -62,8 +60,8 @@
                 </a>
                 <p class="fw-bold">R$ 35,90</p>
             </div>
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=BBDC4">
                     <div class="icon">
                         <img src="../assets/icons/banco-do-brasil.svg">
                     </div>
@@ -74,8 +72,8 @@
                 </a>
                 <p class="fw-bold">R$ 14,93</p>
             </div>
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=B3SA3">
                     <div class="icon">
                         <img src="../assets/icons/b3.svg">
                     </div>

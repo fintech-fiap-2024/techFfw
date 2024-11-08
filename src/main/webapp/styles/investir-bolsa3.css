@@ -37,13 +37,6 @@ h1 {
     margin: 24px auto;
 }
 
-h2 {
-    padding: 12px;
-    font-weight: bold;
-    background-color: var(--bs-primary);
-    border-radius: 8px;
-}
-
 main {
     height: 100vh;
     margin: 24px 12px;
@@ -52,40 +45,44 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
-.acao {
-    padding: 8px;
-    border-radius: 8px;
+form {
+    margin: 0 auto;
 }
 
-.acao:hover {
-    background-color: var(--bs-purple);
+input {
+    margin: 8px auto;
+    padding: 0 8px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--bs-gray);
+    outline: none;
+    box-sizing: border-box;
+    font-size: 24px;
+    color: var(--bs-light);
+    font-weight: bold;
 }
 
-.acao-item {
+.comprar {
     text-decoration: none;
     color: var(--bs-light);
 }
 
-.icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--bs-light);
-    box-shadow: 0 1px 1px 0 rgba(0.5, 0.5, 0.5, 0.1);
-    height: 60px;
-    width: 60px;
-}
-
-img {
-    height: 42px;
-    width: 42px;
-}
-
-.info {
-    color: var(--bs-gray);
-    font-size: 12px;
+.btn {
+    margin: 24px auto;
+    padding: 8px 36px;
+    width: fit-content;
+    color: var(--bs-light);
+    text-decoration: none;
+    background-color: var(--bs-success);
     font-weight: bold;
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.btn:hover {
+    background-color: var(--bs-info);
 }
 
 
