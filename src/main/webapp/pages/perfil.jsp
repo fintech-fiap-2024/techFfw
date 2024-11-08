@@ -3,11 +3,15 @@
 <html>
 <head>
     <title>Perfil</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../resources/css/bootstrap.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/perfil.css">
 </head>
 <body>
-
+<!--
+    to:do = adicionar botão de salvar e voltar ao final de cada sessão o
+    bloquear edição do email, pois como é chave primária não seria interessante alterar
+-->
 <div class="profile-header">
     <div class="profile-icon">
         <a href="URL_DO_DESTINO">

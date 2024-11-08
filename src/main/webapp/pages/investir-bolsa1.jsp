@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="menu-header">
-            <a href="menu.jsp">
+            <a href="investir.jsp">
                 <img class="voltar" src="../assets/icons/esq.svg">
             </a>
             <h1>Investir</h1>

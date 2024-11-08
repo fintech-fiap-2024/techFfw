@@ -1,5 +1,14 @@
+<%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+    Usuario user = (Usuario) session.getAttribute("user");
+    int saldo = user.getSaldo();
+    float limiteDisponivel = user.getLimiteDisponivel();
+    double faturaAtual = 1500.00;
+%>
+
 <html>
 <head>
     <title>Menu</title>
@@ -10,7 +19,7 @@
 <body>
     <header>
         <img class="img-logo" src="../assets/images/logo.svg">
-        <h1 class="fs-5">Olá, Jackie</h1>
+        <h1 class="fs-5">Olá, <%= user != null ? user.getNome() : "Visitante"%></h1>
         <div class="header-icons">
             <a class="header-icon" href="../pages/configuracoes.jsp">
                 <img src="../assets/icons/configurar.svg">
@@ -21,11 +30,12 @@
         </div>
     </header>
     <main>
+
         <div class="saldo">
             <p>Saldo</p>
             <img src="../assets/icons/olho-branco.svg">
         </div>
-        <p class="valor">$ 5234,67</p>
+        <p class="valor">$ <%=saldo%></p>
         <div class="menu-icons d-flex flex-row justify-content-between justify-content-lg-around">
             <div class="d-flex flex-column align-items-center">
                 <a class="menu-icon" href="movimentos.jsp">
@@ -40,13 +50,13 @@
                 <p>Transferir</p>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <a class="menu-icon" href="#">
+                <a class="menu-icon" href="depositar.jsp">
                     <img src="../assets/icons/depositar.svg">
                 </a>
                 <p>Depositar</p>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <a class="menu-icon" href="investir-bolsa1.jsp">
+                <a class="menu-icon" href="investir.jsp">
                     <img src="../assets/icons/investir.svg">
                 </a>
                 <p>Investir</p>
@@ -59,8 +69,8 @@
         <div class="cartao-credito">
             <p class="titulo">Cartão de Crédito</p>
             <p>Fatura atual</p>
-            <p class="valor-fatura">R$0,00</p>
-            <p class="limite">Limite disponível de R$ 800,00</p>
+            <p class="valor-fatura">R$<%=faturaAtual%></p>
+            <p class="limite">Limite disponível de R$ <%=limiteDisponivel%>></p>
             <p class="proximo-pagamento">Próximo pagamento ></p>
             <p>Quinta-feira, 16 Dez </p>
             <hr>
@@ -78,7 +88,6 @@
             <p class="fs-4 mt-2 text-end">Visualize relatórios <br> de desempenho por projeto</p>
             <img class="relatorio" src="../assets/images/relatorios.svg">
         </div>
-
     </main>
 </body>
 </html>

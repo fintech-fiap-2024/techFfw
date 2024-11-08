@@ -21,11 +21,11 @@
         <p class="texto-investir">Recomendações de investimento</p>
     </div>
     <div class="grid-links">
-        <a href="#" class="link">CDB</a>
-        <a href="#" class="link">LCI e LCA</a>
-        <a href="#" class="link">Fundo de Invest.</a>
-        <a href="#" class="link">Tesouro Direto</a>
-        <a href="#" class="link">Bolsa de Valores</a>
+        <a href="investimento1.jsp" class="link">CDB</a>
+        <a href="investimento2.jsp" class="link">LCI e LCA</a>
+        <a href="investimento3.jsp" class="link">Fundo de Invest.</a>
+        <a href="investimento4.jsp" class="link">Tesouro Direto</a>
+        <a href="investir-bolsa1.jsp" class="link">Bolsa de Valores</a>
     </div>
 </main>
 </body>

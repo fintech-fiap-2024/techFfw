@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="../styles/altera-senha.css"> <!-- Link para o CSS externo -->
 </head>
 <body>
-
+<!--
+  to:do - digitar senha antiga e verificar antes de alterar
+ -->
   <header class="d-flex header">
     <a href="seguranca.jsp">
       <img class="voltar" src="../assets/icons/esq.svg">

@@ -68,6 +68,6 @@
             // Atualizar o valor total no frontend
             document.getElementById("totalValor").innerText = total.toFixed(2);
         }
-    </script>
+    </script
 </body>
 </html>

@@ -20,13 +20,14 @@ public class OracleUsuarioDao implements UsuarioDao {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
+        System.out.println("Buscando usuario: " + usuario.getLogin()+" senha: "+usuario.getSenha());
+
         try {
             conexao = ConnectionManager.getInstance().getConnection();
             String sql = "SELECT * FROM T_FFW_USUARIO WHERE login = ? AND senha = ?";
 
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, usuario.getLogin());
-            System.out.println(usuario.getSenha());
             stmt.setString(2, usuario.getSenha());
             rs = stmt.executeQuery();
 
@@ -54,6 +55,8 @@ public class OracleUsuarioDao implements UsuarioDao {
 
         Connection connection = ConnectionManager.getInstance().getConnection();
         String sql = "INSERT INTO T_FFW_USUARIO (cod_usuario, nome_completo, login, senha, cpf) VALUES (SQ_TB_USUARIO.NEXTVAL,?,?,?,?)";
+
+        System.out.println("Adicionando usuario: " + usuario.getLogin()+" senha: "+usuario.getSenha());
 
         try {
             stmt = connection.prepareStatement(sql);
@@ -146,7 +149,7 @@ public class OracleUsuarioDao implements UsuarioDao {
         Connection connection = ConnectionManager.getInstance().getConnection();
 
         try {
-            String sql = "SELECT * FROM T_FFW_USUARIO WHERE nome_completo = ?";
+            String sql = "SELECT * FROM T_FFW_USUARIO WHERE login = ?";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, nome);
             rs = stmt.executeQuery();
