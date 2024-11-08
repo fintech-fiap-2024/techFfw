@@ -40,13 +40,13 @@
                 <p>Transferir</p>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <a class="menu-icon" href="#">
+                <a class="menu-icon" href="depositar.jsp">
                     <img src="../assets/icons/depositar.svg">
                 </a>
                 <p>Depositar</p>
             </div>
             <div class="d-flex flex-column align-items-center">
-                <a class="menu-icon" href="#">
+                <a class="menu-icon" href="investir.jsp">
                     <img src="../assets/icons/investir.svg">
                 </a>
                 <p>Investir</p>

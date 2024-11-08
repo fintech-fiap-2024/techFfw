@@ -32,7 +32,8 @@ public class LoginServlet extends HttpServlet {
         if(user.validarUsuario(temp)) {
             HttpSession session = req.getSession();
             session.setAttribute("user", username);
-            resp.sendRedirect("perfil.jsp");
+            resp.sendRedirect("pages/menu.jsp");
+            System.out.println("Usuario encontrado");
         }else {
             req.setAttribute("erro","Usuario e/ou senha incorretos");
             req.getRequestDispatcher("index.jsp").forward(req, resp);

@@ -20,7 +20,7 @@ public class Usuario {
         this.cpf = cpf;
     }
     public Usuario(String email, String senha) {
-        this.nome = email;
+        this.login = email;
         setSenha(senha);
     }
 

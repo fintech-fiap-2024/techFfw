@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="../styles/perfil.css">
 </head>
 <body>
-
+<!--
+    to:do = adicionar botão de salvar e voltar ao final de cada sessão o
+    bloquear edição do email, pois como é chave primária não seria interessante alterar
+-->
 <div class="profile-header">
     <div class="profile-icon">
         <a href="URL_DO_DESTINO">
