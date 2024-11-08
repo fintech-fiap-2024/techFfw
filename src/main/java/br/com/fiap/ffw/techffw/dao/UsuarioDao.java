@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface UsuarioDao {
 
+    boolean validarUsuario(Usuario usuario);
     void cadastrar(Usuario usuario) throws DBException;
     void atualizar(Usuario usuario) throws DBException;
     void remover(int id) throws DBException;

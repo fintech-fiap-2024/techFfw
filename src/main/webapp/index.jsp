@@ -24,7 +24,7 @@
         <div class="area-login mx-2">
             <h2 class="fw-bold mt-4 fs-4 m-auto">Acesse</h2>
             <p class="my-4">Com e-mail e senha para entrar</p>
-            <form action="/enviar" method="POST">
+            <form action="/techFfw/login" method="post">
                 <div class="input-container">
                     <label class="mb-2" for="email">Digite seu e-mail:</label>
                     <input class="p-1 fs-5 rounded-2" type="text" id="email" name="email" placeholder="E-mail" required>

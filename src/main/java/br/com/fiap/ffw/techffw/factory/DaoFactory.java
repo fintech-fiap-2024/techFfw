@@ -7,4 +7,5 @@ public class DaoFactory {
     public static UsuarioDao getUsuarioDao() {
         return new OracleUsuarioDao();
     }
+    
 }
