@@ -5,5 +5,6 @@ import br.com.fiap.ffw.techffw.model.Receita;
 
 public interface ReceitaDao {
     void criarReceita(Receita receita) throws DBException;
+    void atualizarReceita(Receita receita) throws DBException;
     Receita buscarReceita(int id) throws DBException;
 }
