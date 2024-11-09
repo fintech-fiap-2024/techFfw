@@ -72,8 +72,7 @@
             <p>Fatura atual</p>
             <p class="valor-fatura">R$<%=faturaAtual%></p>
             <p class="limite">Limite disponível de R$ <%=limiteDisponivel%></p>
-            <p class="proximo-pagamento">Próximo pagamento</p>
-            <p>Quinta-feira, 16 Dez </p>
+            <p class="proximo-pagamento">Próximo pagamento: <%=user.getProximoPagamento()%></p>
             <hr>
         </div>
         <a href="objetivo-financeiro.jsp" class="investimentos">

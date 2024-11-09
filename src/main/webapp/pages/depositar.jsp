@@ -28,7 +28,7 @@
             <h2>Qual valor do depósito?</h2>
             <p class="balance-info">Saldo disponível de <span>R$<%=saldo%></span></p>
 
-            <input type="text" name="valor" id="deposit-input" class="deposit-input" placeholder="R$ 0,00">
+            <input type="number" name="valor" id="deposit-input" class="deposit-input" placeholder="R$ 0,00">
 
             <button class="copy-btn">Depositar</button>
 
