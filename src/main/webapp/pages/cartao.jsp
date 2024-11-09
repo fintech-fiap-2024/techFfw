@@ -1,5 +1,12 @@
+<%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+    Usuario user = (Usuario) session.getAttribute("user");
+
+%>
+
 <html>
 <head>
     <title>Meus cartões</title>
