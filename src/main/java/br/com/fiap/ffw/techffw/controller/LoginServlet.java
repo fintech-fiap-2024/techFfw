@@ -29,7 +29,6 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("senha");
 
         Usuario userValidator = new Usuario(username, password);
-
         if(user.validarUsuario(userValidator)) {
             HttpSession session = req.getSession();
             UsuarioDao userLoggedDAO = new OracleUsuarioDao();

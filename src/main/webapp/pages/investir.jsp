@@ -1,5 +1,12 @@
+<%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+    Usuario user = (Usuario) session.getAttribute("user");
+    double saldo = user.getSaldo();
+%>
+
 <html>
 <head>
     <title>Investir</title>
@@ -17,7 +24,7 @@
     </header>
     <main>
         <div>
-            <p class="saldo">Saldo disponível de <span class="saldo-valor">R$5234,67</span></p>
+            <p class="saldo">Saldo disponível de <span class="saldo-valor">R$<%=saldo%></span></p>
             <p class="texto-investir">Recomendações de investimento</p>
         </div>
         <div class="grid-links">

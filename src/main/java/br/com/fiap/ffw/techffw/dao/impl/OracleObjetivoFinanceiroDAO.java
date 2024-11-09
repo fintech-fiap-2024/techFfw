@@ -6,6 +6,8 @@ import br.com.fiap.ffw.techffw.exception.DBException;
 import br.com.fiap.ffw.techffw.model.ObjetivoFinanceiro;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OracleObjetivoFinanceiroDAO implements ObjetivoFinanceiroDao {
     private Connection connection;
@@ -14,7 +16,6 @@ public class OracleObjetivoFinanceiroDAO implements ObjetivoFinanceiroDao {
     public void criarObjetivo(ObjetivoFinanceiro objetivoFinanceiro, int userId) throws DBException {
 
         PreparedStatement stmt = null;
-        ResultSet rs = null;
 
         try {
             connection = ConnectionManager.getInstance().getConnection();
@@ -39,6 +40,40 @@ public class OracleObjetivoFinanceiroDAO implements ObjetivoFinanceiroDao {
             }
         }
     }
+    @Override
+    public List<ObjetivoFinanceiro> buscarObjetivos(int id) throws DBException {
+        List<ObjetivoFinanceiro> objetivoFinanceiros = new ArrayList<ObjetivoFinanceiro>();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        connection = ConnectionManager.getInstance().getConnection();
+        String sql = "SELECT (cod_objetivo, descricao, valor, data) FROM T_FFW_OBJETIVO WHERE id_usuario = ?";
+
+        try{
+            stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                ObjetivoFinanceiro objetivo = new ObjetivoFinanceiro();
+                objetivo.setCodObjetivo(rs.getInt("cod_objetivo"));
+                objetivo.setDescricaoObjetivo(rs.getString("descricao"));
+                objetivo.setValorObjetivo(rs.getDouble("valor"));
+                objetivo.setDataObjetivo(rs.getDate("data").toLocalDate());
+                objetivoFinanceiros.add(objetivo);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try{
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return objetivoFinanceiros;
+    }
 
     @Override
     public void atualizarObjetivo(ObjetivoFinanceiro objetivo) throws DBException {
@@ -50,8 +85,5 @@ public class OracleObjetivoFinanceiroDAO implements ObjetivoFinanceiroDao {
 
     }
 
-    @Override
-    public ObjetivoFinanceiro buscarObjetivo(int id) throws DBException {
-        return null;
-    }
+
 }

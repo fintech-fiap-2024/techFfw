@@ -160,7 +160,8 @@ public class OracleUsuarioDao implements UsuarioDao {
                 String login = rs.getString("login");
                 String senha = rs.getString("senha");
                 String cpf = rs.getString("cpf");
-                user = new Usuario(id, nomeCompleto, login, senha, cpf);
+                double saldo = rs.getDouble("saldo");
+                user = new Usuario(id, nomeCompleto, login, senha, cpf,saldo);                
                 System.out.println("Usuário encontrado com sucesso");
 
             }

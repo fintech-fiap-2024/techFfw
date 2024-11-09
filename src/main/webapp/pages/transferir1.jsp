@@ -1,9 +1,9 @@
 <%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
     Usuario user = (Usuario) session.getAttribute("user");
-    int saldo = user.getSaldo();
+    double saldo = user.getSaldo();
 %>
 
 <html>
@@ -14,23 +14,24 @@
     <link rel="stylesheet" href="../styles/transferir1.css">
 </head>
 <body>
-    <header>
-        <div class="menu-header">
-            <a href="menu.jsp">
-                <img class="sair" src="../assets/icons/x.svg">
-            </a>
-            <h1>Transferir</h1>
-            <a>
-                <img class="logo-img d-md-none" src="../assets/icons/qrcode.svg">
-            </a>
-        </div>
-    </header>
-    <main>
+<header>
+    <div class="menu-header">
+        <a href="menu.jsp">
+            <img class="sair" src="../assets/icons/x.svg">
+        </a>
+        <h1>Transferir</h1>
+        <a>
+            <img class="logo-img d-md-none" src="../assets/icons/qrcode.svg">
+        </a>
+    </div>
+</header>
+<main>
+    <form action="/techFfw/transferir" method="post">
         <h2>Qual é o valor da transferência?</h2>
         <p class="saldo">Saldo disponível de <span class="saldo-valor">R$<%=saldo%></span></p>
-        <input type="number" placeholder="R$" name="valorTransferencia">
+        <input type="number" placeholder="R$" name="valorTransacao" required>
         <h2>Para quem você quer transferir?</h2>
-        <input type="text" placeholder="Nome, CPF/CNPJ ou chave Pix" name="destinatarioTransferencia">
+        <input type="text" placeholder="Nome, CPF/CNPJ ou chave Pix" name="destinatarioTransacao" required>
 
         <p class="contatos">Todos os contatos</p>
 
@@ -64,17 +65,16 @@
                 <p class="fw-bold mb-0">Ulisses Neto</p>
             </div>
         </div>
-        
-        <a class="d-flex align-content-end avancar" href="transferir2.jsp">
-            <img src="../assets/icons/avancar.svg">
-        </a>
-    </main>
-    <footer class="rodape d-flex justify-content-around align-items-center">
-        <a class="link-footer" href="menu.jsp">
-            <img class="img-footer" src="../assets/icons/menu.svg">
-        </a>
-        <img class="footer-logo ms-2" src="../assets/images/logo.svg">
-    </footer>
 
+        <button class="btn">Transferir</button>
+    </form>
+
+</main>
+<footer class="rodape d-flex justify-content-around align-items-center">
+    <a class="link-footer" href="menu.jsp">
+        <img class="img-footer" src="../assets/icons/menu.svg">
+    </a>
+    <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+</footer>
 </body>
 </html>
