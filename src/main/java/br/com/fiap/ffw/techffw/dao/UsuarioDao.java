@@ -10,6 +10,8 @@ public interface UsuarioDao {
     boolean validarUsuario(Usuario usuario);
     void cadastrar(Usuario usuario) throws DBException;
     void atualizar(Usuario usuario) throws DBException;
+    void realizarSaque(Usuario usuario, double valor) throws DBException;
+    void realizarDeposito(Usuario usuario, double valor) throws DBException;
     void remover(int id) throws DBException;
     Usuario buscarPorNome(String nome);
     List<Usuario> listar();

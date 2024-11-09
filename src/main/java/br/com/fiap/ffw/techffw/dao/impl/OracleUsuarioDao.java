@@ -20,7 +20,7 @@ public class OracleUsuarioDao implements UsuarioDao {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-        System.out.println("Buscando usuario: " + usuario.getLogin()+" senha: "+usuario.getSenha());
+        System.out.println("Buscando usuario: " + usuario.getLogin() + " senha: " + usuario.getSenha());
 
         try {
             conexao = ConnectionManager.getInstance().getConnection();
@@ -56,7 +56,7 @@ public class OracleUsuarioDao implements UsuarioDao {
         Connection connection = ConnectionManager.getInstance().getConnection();
         String sql = "INSERT INTO T_FFW_USUARIO (cod_usuario, nome_completo, login, senha, cpf) VALUES (SQ_TB_USUARIO.NEXTVAL,?,?,?,?)";
 
-        System.out.println("Adicionando usuario: " + usuario.getLogin()+" senha: "+usuario.getSenha());
+        System.out.println("Adicionando usuario: " + usuario.getLogin() + " senha: " + usuario.getSenha());
 
         try {
             stmt = connection.prepareStatement(sql);
@@ -216,5 +216,63 @@ public class OracleUsuarioDao implements UsuarioDao {
             }
         }
         return usuarios;
+    }
+
+    @Override
+    public void realizarSaque(Usuario usuario, double valor) throws DBException {
+        PreparedStatement stmt = null;
+
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        String sql = "UPDATE T_FFW_USUARIO SET " +
+                "saldo = saldo - ? WHERE cod_usuario = ?";
+
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setDouble(1, valor);
+            stmt.setInt(2, usuario.getId());
+            stmt.executeUpdate();
+
+            usuario.decrementarSaldo(valor);
+
+            System.out.println("Saque realizado com sucesso");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void realizarDeposito(Usuario usuario, double valor) throws DBException {
+        PreparedStatement stmt = null;
+
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        String sql = "UPDATE T_FFW_USUARIO SET " +
+                "saldo = saldo + ? WHERE cod_usuario = ?";
+
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setDouble(1, valor);
+            stmt.setInt(2, usuario.getId());
+            stmt.executeUpdate();
+
+            usuario.incrementarSaldo(valor);
+
+            System.out.println("Deposito realizado com sucesso");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

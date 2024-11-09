@@ -13,7 +13,7 @@ public class Usuario {
     private String cpf;
     private float limiteDisponivel;
     private String proximoPagamento;
-    private int saldo;
+    private double saldo;
     private int agencia, contaCorrente;
     private Endereco endereco;
 
@@ -27,10 +27,10 @@ public class Usuario {
         this.cpf = cpf;
         this.limiteDisponivel = 10000;
         this.proximoPagamento = "24 Dez";
-        this.saldo = 1000;
         this.agencia = 1234-5;
         this.contaCorrente = 123456;
         this.endereco = null;
+        this.saldo=0;
     }
 
     public Endereco getEndereco() {
@@ -49,7 +49,7 @@ public class Usuario {
         return proximoPagamento;
     }
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
@@ -103,7 +103,12 @@ public class Usuario {
             throw new RuntimeException(e);
         }
     }
-
+    public void decrementarSaldo(double valor){
+        saldo -= valor;
+    }
+    public void incrementarSaldo(double valor){
+        saldo += valor;
+    }
     public String getCpf() {
         return cpf;
     }
