@@ -133,12 +133,15 @@ main {
 
 .dir-reservados {
     text-align: center;
-    margin: 24px 0 0 0;
+    padding-bottom: 64px;
 }
 
 footer {
     background-color: var(--bs-purple);
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .rodape {
@@ -163,5 +166,4 @@ footer {
         margin: 12px auto;
         max-width: 900px;
     }
-
 }
