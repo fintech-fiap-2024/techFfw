@@ -34,7 +34,7 @@
                 <input type="number" id="valorAplicacao" name="valorAplicacao" placeholder="Mínimo: R$ <%= aplicacaoMinima %>" required>
                 <input type="hidden" id="aplicacaoMinima" value="<%= aplicacaoMinima %>">
                 <a class="transferir d-flex justify-content-center" >
-                    <button class="btn" type="submit">Transferir</button>
+                    <button class="btn" type="submit">Aplicar</button>
                 </a>
             </form>
         </div>

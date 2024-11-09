@@ -97,22 +97,6 @@ input {
     margin: 24px auto;
 }
 
-footer {
-    background-color: var(--bs-purple);
-    height: 70px;
-    width: 100vw;
-    padding: 16px;
-}
-
-.img-footer {
-    height: 64px;
-    width: 64px;
-}
-
-.footer-logo {
-    height: 42px;
-}
-
 .btn {
     margin: 24px auto;
     padding: 8px 36px;
@@ -130,6 +114,36 @@ footer {
 .disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+.dir-reservados {
+    text-align: center;
+    padding-bottom: 64px;
+}
+
+footer {
+    background-color: var(--bs-purple);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.rodape {
+    margin: 0 auto;
+    max-width: 900px;
+    height: 70px;
+    width: 100vw;
+    padding: 16px;
+}
+
+.img-footer {
+    height: 64px;
+    width: 64px;
+}
+
+.footer-logo {
+    height: 42px;
 }
 
 @media (min-width: 764px) {

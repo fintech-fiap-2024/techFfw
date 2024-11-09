@@ -37,6 +37,10 @@ h1 {
     margin: 24px auto;
 }
 
+h2 {
+    padding-top: 24px;
+}
+
 main {
     height: 100vh;
     margin: 24px 12px;
@@ -83,6 +87,10 @@ main {
     border-radius: 5px;
 }
 
+.copy-btn:hover {
+    background-color: var(--bs-info);
+}
+
 .qr-code-container {
     text-align: center;
     margin-top: 1.5rem;
@@ -109,8 +117,22 @@ main {
     font-size: 1.5rem;
 }
 
+.dir-reservados {
+    text-align: center;
+    padding-bottom: 64px;
+}
+
 footer {
     background-color: var(--bs-purple);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.rodape {
+    margin: 0 auto;
+    max-width: 900px;
     height: 70px;
     width: 100vw;
     padding: 16px;
