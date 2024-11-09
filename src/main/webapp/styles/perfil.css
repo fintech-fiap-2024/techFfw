@@ -75,7 +75,7 @@ body {
 .form-control {
     background-color: var(--bs-light);
     border: none;
-    color: var(--bs-light);
+    color: var(--bs-dark);
 }
 
 .form-control::placeholder {
@@ -96,4 +96,10 @@ body {
 .nav-icons i {
     color: var(--bs-light);
     font-size: 1.5rem;
+}
+.readonly-field{
+    background-color: #e9ecef;
+    border: 2px solid #6c757d;
+    font-weight: bold;
+    cursor: not-allowed;
 }

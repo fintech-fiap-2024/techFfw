@@ -75,9 +75,9 @@
             <p>Quinta-feira, 16 Dez </p>
             <hr>
         </div>
-        <a class="investimentos">
+        <a href="objetivo-financeiro.jsp" class="investimentos">
             <img src="../assets/icons/investimentos.svg">
-            <p>Investimentos</p>
+            <p>Objetivo Financeiro</p>
         </a>
         <p class="novas-funcionalidades">Novas funcionalidades</p>
         <div class="d-md-flex flex-md-row align-items-md-center justify-content-around mb-md-5">

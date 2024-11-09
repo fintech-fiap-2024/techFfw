@@ -1,5 +1,11 @@
+<%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+    Usuario user = (Usuario) session.getAttribute("user");
+%>
+
 <html>
 <head>
     <title>Perfil</title>
@@ -28,8 +34,8 @@
         <h2>DADOS DO USUÁRIO</h2>
         <form>
             <div class="mb-3">
-                <label class="form-label">Nome:</label>
-                <input type="text" class="form-control" placeholder="Nome">
+                <label class="form-label readonly-field">Nome:</label>
+                <input type="text" class="form-control" placeholder="<%= user.getNome()%>"  readonly>
             </div>
             <div class="mb-3">
                 <label class="form-label">Sobrenome:</label>
