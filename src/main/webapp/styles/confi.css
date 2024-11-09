@@ -12,7 +12,6 @@
 }
 
 header {
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--bs-success);
@@ -22,12 +21,8 @@ header {
     color: var(--bs-light);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    .titulo {
-        font-size: 40px;
-        margin-left: 40px;
-    }
-
 }
+
 .voltar {
     margin: 24px;
     width: 18px;
@@ -44,10 +39,7 @@ body {
     justify-content: center;
 }
 .area-link {
-    margin-top: 50px;
-    margin-bottom: 40px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin: 50px 60px 40px 60px;
     width: 100%;
     display: flex;
     justify-content: space-between;
