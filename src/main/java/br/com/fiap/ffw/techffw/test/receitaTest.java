@@ -12,7 +12,7 @@ public class receitaTest {
     public static void main(String[] args) {
         ReceitaDao teste = DaoFactory.getReceitaDao();
         Receita receita = new Receita(
-                2,1,2,1000, LocalDate.of(2003,10,1), "Receita", "entrada de dinehiro" , "Rodrigo" , "teste1"
+                2,1,3,2355, LocalDate.of(2024,11,13), "Receita", "Pix" , "Pualo" , "teste2"
         );
 
         try {
