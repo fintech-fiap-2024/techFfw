@@ -51,10 +51,25 @@ main {
     width: 60px;
 }
 
+footer {
+    background-color: var(--bs-purple);
+    height: 70px;
+    width: 100vw;
+    padding: 16px;
+}
+
+.img-footer {
+    height: 64px;
+    width: 64px;
+}
+
+.footer-logo {
+    height: 42px;
+}
 
 @media (min-width: 764px) {
     main {
         margin: 12px auto;
-        max-width: 600px;
+        max-width: 900px;
     }
 }

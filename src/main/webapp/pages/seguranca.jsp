@@ -35,7 +35,9 @@
             <div class=" link-2 me-2">
                 <label class="texto-conf fs-1">Ativar FaceId</label>
             </div>
-            <div class="link-3"><img class="" width="20" src="../assets/icons/dir.svg"></div>
+            <div class="fs-3 form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            </div>
         </a>
     </div>
 </div>
