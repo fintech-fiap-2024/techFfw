@@ -131,9 +131,19 @@ main {
     }
 }
 
+.dir-reservados {
+    text-align: center;
+    margin: 24px 0 0 0;
+}
 
 footer {
     background-color: var(--bs-purple);
+
+}
+
+.rodape {
+    margin: 0 auto;
+    max-width: 900px;
     height: 70px;
     width: 100vw;
     padding: 16px;
@@ -148,12 +158,10 @@ footer {
     height: 42px;
 }
 
-
 @media (min-width: 764px) {
     main {
         margin: 12px auto;
         max-width: 900px;
     }
+
 }
-
-

@@ -20,7 +20,7 @@
     <main>
         <div class="container my-4">
             <div class="investment-card">
-                <a href="#" class="apply">
+                <a href="aplicar-investimento.jsp?nomeAplicacao=CDB Limite Garantido&aplicacaoMinima=30.00" class="apply">
                     <img src="../assets/icons/dir.svg">
                 </a>
                 <h2 class="investment-title">CDB Limite Garantido</h2>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="investment-card">
-                <a href="#" class="apply">
+                <a href="aplicar-investimento.jsp?nomeAplicacao=CDB Pós-fixada&aplicacaoMinima=10.00" class="apply">
                     <img src="../assets/icons/dir.svg">
                 </a>
                 <h2 class="investment-title">CDB Pós-fixada</h2>
@@ -62,7 +62,7 @@
             </div>
 
             <div class="investment-card">
-                <a href="#" class="apply">
+                <a href="aplicar-investimento.jsp?nomeAplicacao=CDB Resgate Automático&aplicacaoMinima=3000.00" class="apply">
                     <img src="../assets/icons/dir.svg">
                 </a>
                 <h2 class="investment-title">CDB Resgate Automático</h2>
@@ -83,12 +83,14 @@
             </div>
         </div>
     </main>
-    <footer class="rodape d-flex justify-content-around align-items-center">
-        <a class="link-footer" href="menu.jsp">
-            <img class="img-footer" src="../assets/icons/menu.svg">
-        </a>
-        <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+    <p class="dir-reservados">© 2024 Todos os direitos reservados</p>
+    <footer>
+        <div class="rodape d-flex justify-content-between align-items-center">
+            <a class="link-footer" href="menu.jsp">
+                <img class="img-footer" src="../assets/icons/menu.svg">
+            </a>
+            <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+        </div>
     </footer>
-
 </body>
 </html>

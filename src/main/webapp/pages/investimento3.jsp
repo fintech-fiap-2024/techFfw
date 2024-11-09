@@ -20,7 +20,7 @@
     <main>
         <div class="container my-4">
             <div class="investment-card">
-                <a href="#" class="apply">
+                <a href="aplicar-investimento.jsp?nomeAplicacao=SPS hawk Privado(FFW)&aplicacaoMinima=1000.00" class="apply">
                     <img src="../assets/icons/dir.svg">
                 </a>
                 <h2 class="investment-title">SPS hawk Privado(FFW)</h2>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="investment-card">
-                <a href="#" class="apply">
+                <a href="aplicar-investimento.jsp?nomeAplicacao=Okland Crédito(FFW)&aplicacaoMinima=200.00" class="apply">
                     <img src="../assets/icons/dir.svg">
                 </a>
                 <h2 class="investment-title">Okland Crédito(FFW)</h2>
@@ -62,7 +62,7 @@
             </div>
 
             <div class="investment-card">
-                <a href="#" class="apply">
+                <a href="aplicar-investimento.jsp?nomeAplicacao=FXTX(FFW)&aplicacaoMinima=500.00" class="apply">
                     <img src="../assets/icons/dir.svg">
                 </a>
                 <h2 class="investment-title">FXTX(FFW)</h2>
@@ -83,12 +83,14 @@
             </div>
         </div>
     </main>
-    <footer class="rodape d-flex justify-content-around align-items-center">
-        <a class="link-footer" href="menu.jsp">
-            <img class="img-footer" src="../assets/icons/menu.svg">
-        </a>
-        <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+    <p class="dir-reservados">© 2024 Todos os direitos reservados</p>
+    <footer>
+        <div class="rodape d-flex justify-content-between align-items-center">
+            <a class="link-footer" href="menu.jsp">
+                <img class="img-footer" src="../assets/icons/menu.svg">
+            </a>
+            <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+        </div>
     </footer>
-
 </body>
 </html>
