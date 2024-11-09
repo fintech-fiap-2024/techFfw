@@ -33,15 +33,15 @@ public class UsuarioServelet extends HttpServlet {
         String cpf = req.getParameter("cpf");
 
         Usuario user = new Usuario(0, nome, login, senha, cpf);
-
+        String resultado=null;
         try {
             dao.cadastrar(user);
-            req.setAttribute("mensagem", "Usuario cadastrado com sucesso.");
+            resultado = "sucesso=true";
         } catch (DBException e) {
             e.printStackTrace();
-            req.setAttribute("erro", "Erro ao cadastrar usuario");
+            resultado = "sucesso=false";
         }
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath()+"?"+resultado);
     }
 
     @Override

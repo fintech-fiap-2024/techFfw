@@ -2,6 +2,7 @@ package br.com.fiap.ffw.techffw.model;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 import static br.com.fiap.ffw.techffw.util.CriptografiaUtils.criptografar;
 
@@ -16,8 +17,10 @@ public class Usuario {
     private double saldo;
     private int agencia, contaCorrente;
     private Endereco endereco;
+    List<ObjetivoFinanceiro> objetivoFinanceiros;
 
-
+    public Usuario() {
+    }
 
     public Usuario(int id, String nome, String login, String senha, String cpf) {
         this.id = id;
@@ -31,6 +34,32 @@ public class Usuario {
         this.contaCorrente = 123456;
         this.endereco = null;
         this.saldo=0;
+    }
+
+    public Usuario(int id, String nome, String login, String senha, String cpf,double saldo) {
+        this.id = id;
+        this.nome = nome;
+        this.login = login;
+        setSenha(senha);
+        this.cpf = cpf;
+        this.limiteDisponivel = 10000;
+        this.proximoPagamento = "24 Dez";
+        this.agencia = 1234-5;
+        this.contaCorrente = 123456;
+        this.endereco = null;
+        this.saldo=saldo;
+    }
+
+    public List<ObjetivoFinanceiro> getObjetivoFinanceiros() {
+        return objetivoFinanceiros;
+    }
+
+    public void setObjetivoFinanceiros(List<ObjetivoFinanceiro> objetivoFinanceiros) {
+        this.objetivoFinanceiros = objetivoFinanceiros;
+    }
+
+    public void adicionaObjetivo(ObjetivoFinanceiro objetivo) {
+        this.objetivoFinanceiros.add(objetivo);
     }
 
     public Endereco getEndereco() {

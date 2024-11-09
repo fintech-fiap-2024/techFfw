@@ -36,23 +36,26 @@ public class DepositoServlet extends HttpServlet {
 
         HttpSession session = req.getSession(false);
         String nome="";
+        Usuario usuario = new Usuario();
         if (session != null) {
-            Usuario usuario = (Usuario) session.getAttribute("user");
+            usuario = (Usuario) session.getAttribute("user");
             nome = usuario.getNome();
-
         }
 
         UsuarioDao userLoggedDAO = new OracleUsuarioDao();
         Usuario userLogged = userLoggedDAO.buscarPorNome(nome);
+        String resultado;
         try {
-            dao.realizarDeposito(userLogged, valor);
+            dao.realizarDeposito(usuario, valor);
             req.setAttribute("depositSuccess", "Deposito de R$"+valor+" realizado com sucesso.");
+            resultado="success";
         } catch (DBException e) {
             req.setAttribute("depositError", "Erro ao depositar.");
+            resultado="error";
             e.printStackTrace();
         }
-        req.getRequestDispatcher("pages/menu.jsp").forward(req, resp);
-
+//        req.getRequestDispatcher("pages/menu.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath()+"/pages/menu.jsp"+"?"+resultado);
 
 
     }

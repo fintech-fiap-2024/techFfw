@@ -4,6 +4,7 @@
 
 <%
     Usuario user = (Usuario) session.getAttribute("user");
+    String nome = user.getNome();
 %>
 
 <html>
@@ -35,7 +36,7 @@
         <form>
             <div class="mb-3">
                 <label class="form-label readonly-field">Nome:</label>
-                <input type="text" class="form-control" placeholder="<%= user.getNome()%>"  readonly>
+                <input type="text" class="form-control" placeholder="<%= nome%>"  readonly>
             </div>
             <div class="mb-3">
                 <label class="form-label">Sobrenome:</label>

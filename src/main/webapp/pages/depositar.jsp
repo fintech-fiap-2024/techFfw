@@ -4,7 +4,7 @@
 
 <%
     Usuario user = (Usuario) session.getAttribute("user");
-    int saldo = user.getSaldo();
+    double saldo = user.getSaldo();
 %>
 <html>
 <head>
@@ -24,13 +24,13 @@
 </header>
 <main>
     <div class="container-fluid deposit-container">
-        <form action="/techFfw/depositar" method="post">
+        <form action="/techFfw/deposito" method="post">
             <h2>Qual valor do depósito?</h2>
             <p class="balance-info">Saldo disponível de <span>R$<%=saldo%></span></p>
 
             <input type="text" name="valor" id="deposit-input" class="deposit-input" placeholder="R$ 0,00">
 
-            <button class="copy-btn">Copiar Pix Copia/Cola</button>
+            <button class="copy-btn">Depositar</button>
 
             <div class="qr-code-container">
                 <p>Ou</p>
@@ -48,6 +48,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<!--
 <script>
     const input = document.getElementById('deposit-input');
 
@@ -58,5 +59,6 @@
         e.target.value = "R$ " + value.replace(".", ",");
     });
 </script>
+-->
 </body>
 </html>

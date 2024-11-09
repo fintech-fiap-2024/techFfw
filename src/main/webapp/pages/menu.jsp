@@ -4,7 +4,7 @@
 
 <%
     Usuario user = (Usuario) session.getAttribute("user");
-    int saldo = user.getSaldo();
+    double saldo = user.getSaldo();
     float limiteDisponivel = user.getLimiteDisponivel();
     double faturaAtual = 1500.00;
 
@@ -71,8 +71,8 @@
             <p class="titulo">Cartão de Crédito</p>
             <p>Fatura atual</p>
             <p class="valor-fatura">R$<%=faturaAtual%></p>
-            <p class="limite">Limite disponível de R$ <%=limiteDisponivel%>></p>
-            <p class="proximo-pagamento">Próximo pagamento ></p>
+            <p class="limite">Limite disponível de R$ <%=limiteDisponivel%></p>
+            <p class="proximo-pagamento">Próximo pagamento</p>
             <p>Quinta-feira, 16 Dez </p>
             <hr>
         </div>
