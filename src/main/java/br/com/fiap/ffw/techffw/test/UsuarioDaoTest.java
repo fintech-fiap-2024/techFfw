@@ -16,7 +16,7 @@ public class UsuarioDaoTest {
 
         Usuario user = new Usuario(
                 0,
-                "user",
+                "USER",
                 "user",
                 "user",
                 "123456789"
