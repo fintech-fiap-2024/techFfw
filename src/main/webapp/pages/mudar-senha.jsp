@@ -15,7 +15,7 @@
     <a href="seguranca.jsp">
       <img class="voltar" src="../assets/icons/esq.svg">
     </a>
-    <h1 class="titulo">ALTERAR SENHA</h1>
+    <h1 class="fs-1">ALTERAR SENHA</h1>
   </header>
   <div class="area-form">
     <form action="" method="post">

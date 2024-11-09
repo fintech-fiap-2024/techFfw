@@ -7,6 +7,7 @@
     int saldo = user.getSaldo();
     float limiteDisponivel = user.getLimiteDisponivel();
     double faturaAtual = 1500.00;
+
 %>
 
 <html>

@@ -12,53 +12,57 @@
 }
 
 body {
-    background-color: var(--bs-primary);
+    background: linear-gradient(180deg, var(--bs-primary) 0%, var(--bs-secondary) 100%);
     color: var(--bs-light);
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
 }
 
-.header {
+.menu-header {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 15px;
-    background-color: var(--bs-primary);
-    width: 100%; /* Ocupa toda a largura */
+    justify-content: space-between;
 }
 
-.back-button {
-    position: absolute;
-    left: 15px;
-    color: var(--bs-light);
-    font-size: 1.5em;
-    text-decoration: none;
+.voltar {
+    margin: 24px;
+    width: 18px;
 }
 
-.title {
-    font-size: 1.5em;
-    margin: 0 auto;
+.logo-img {
+    margin: 24px 12px;
+    width: 36px;
+}
+
+h1 {
+    margin: 24px auto;
+}
+
+main {
+    height: 100vh;
+    margin: 24px 12px;
+    padding: 8px;
+    background-color: rgb(217, 217, 217, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .container {
-    width: 100%; /* Ocupa toda a largura da tela */
-    padding: 0 15px; /* Adiciona espaçamento lateral */
+    width: 100%;
+    padding: 0 16px;
+    margin-top: 8px;
 }
 
 .investment-card {
     background-color: var(--bs-purple);
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
     position: relative;
-    width: 100%; /* Garante que cada card ocupe a largura total */
+    width: 100%;
 }
 
 .apply {
     position: absolute;
     top: 10;
-    right: 1rem; /* Mantém o botão na extremidade direita */
+    right: 1rem;
     color: var(--bs-light);
     font-size: 1.5em;
     text-decoration: none;
@@ -105,14 +109,13 @@ body {
     text-decoration: none;
 }
 
-/* Responsividade */
 @media (max-width: 576px) {
     .investment-info {
         flex-direction: column;
     }
 
     .apply {
-        right: 0.5rem; /* Ajusta o botão em telas muito pequenas */
+        right: 0.5rem;
     }
 }
 
@@ -129,6 +132,28 @@ body {
 }
 
 
+footer {
+    background-color: var(--bs-purple);
+    height: 70px;
+    width: 100vw;
+    padding: 16px;
+}
 
+.img-footer {
+    height: 64px;
+    width: 64px;
+}
+
+.footer-logo {
+    height: 42px;
+}
+
+
+@media (min-width: 764px) {
+    main {
+        margin: 12px auto;
+        max-width: 900px;
+    }
+}
 
 

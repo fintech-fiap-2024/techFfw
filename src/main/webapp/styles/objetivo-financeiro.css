@@ -66,20 +66,19 @@ main {
 }
 
 footer {
+    background-color: var(--bs-purple);
     height: 70px;
     width: 100vw;
-    background-color: var(--bs-purple);
+    padding: 16px;
 }
 
 .img-footer {
-    padding: 8px;
     height: 64px;
     width: 64px;
 }
 
 .footer-logo {
-    height: 72px;
-    width: 72px;
+    height: 42px;
 }
 
 @media (min-width: 764px) {

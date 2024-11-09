@@ -85,5 +85,11 @@
             </a>
         </div>
     </main>
+    <footer class="rodape d-flex justify-content-around align-items-center">
+        <a class="link-footer" href="menu.jsp">
+            <img class="img-footer" src="../assets/icons/menu.svg">
+        </a>
+        <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+    </footer>
 </body>
 </html>

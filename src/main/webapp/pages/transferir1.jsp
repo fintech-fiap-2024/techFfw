@@ -1,5 +1,11 @@
+<%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+    Usuario user = (Usuario) session.getAttribute("user");
+    int saldo = user.getSaldo();
+%>
+
 <html>
 <head>
     <title>Transferir</title>
@@ -21,10 +27,10 @@
     </header>
     <main>
         <h2>Qual é o valor da transferência?</h2>
-        <p class="saldo">Saldo disponível de <span class="saldo-valor">R$5234,67</span></p>
-        <input type="number" placeholder="R$">
+        <p class="saldo">Saldo disponível de <span class="saldo-valor">R$<%=saldo%></span></p>
+        <input type="number" placeholder="R$" name="valorTransferencia">
         <h2>Para quem você quer transferir?</h2>
-        <input type="text" placeholder="Nome, CPF/CNPJ ou chave Pix">
+        <input type="text" placeholder="Nome, CPF/CNPJ ou chave Pix" name="destinatarioTransferencia">
 
         <p class="contatos">Todos os contatos</p>
 
@@ -63,6 +69,12 @@
             <img src="../assets/icons/avancar.svg">
         </a>
     </main>
+    <footer class="rodape d-flex justify-content-around align-items-center">
+        <a class="link-footer" href="menu.jsp">
+            <img class="img-footer" src="../assets/icons/menu.svg">
+        </a>
+        <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+    </footer>
 
 </body>
 </html>
