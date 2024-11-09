@@ -49,15 +49,15 @@ public class TransferirServlet extends HttpServlet {
         String destinatario = req.getParameter("destinatarioTransacao");
         LocalDate data = LocalDate.now();
 
-        Transacao transacao = new Transacao(0, userId, "Transferência Bancária", nomeRemetente, destinatario, valorTransacao, data);
+        Transacao transacao = new Transacao(0, userId, "Transferência Bancária", destinatario, nomeRemetente, valorTransacao, data);
 
         try {
             dao.criarTransacao(transacao, userId);
             usuarioDao.realizarSaque(user,valorTransacao);//Chamando realizar saque pois o usuario tem que decrementar o saldo
-            req.setAttribute("valorTransacao", valorTransacao);
-            req.setAttribute("destinatarioTransacao", destinatario);
             req.setAttribute("transferenciaSuccess", "Transferencia realizada com sucesso");
-            resp.sendRedirect(req.getContextPath()+"/pages/transferir-aprovado.jsp");
+            session.setAttribute("user", user);
+            session.setAttribute("transacao", transacao);
+            resp.sendRedirect(req.getContextPath()+"/pages/transferir3.jsp");
         } catch (DBException e) {
             e.printStackTrace();
             req.setAttribute("transferenciaError", "Erro ao criar transacao");

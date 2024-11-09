@@ -5,7 +5,6 @@
     Usuario user = (Usuario) session.getAttribute("user");
     double saldo = user.getSaldo();
 %>
-
 <html>
 <head>
     <title>Transferir</title>
@@ -29,12 +28,11 @@
     <form action="/techFfw/transferir" method="post">
         <h2>Qual é o valor da transferência?</h2>
         <p class="saldo">Saldo disponível de <span class="saldo-valor">R$<%=saldo%></span></p>
-        <input type="number" placeholder="R$" name="valorTransacao" required>
+        <input type="number" placeholder="R$" id="valorTransacao" name="valorTransacao" step="0.01" oninput="verificaValor()" required >
         <h2>Para quem você quer transferir?</h2>
         <input type="text" placeholder="Nome, CPF/CNPJ ou chave Pix" name="destinatarioTransacao" required>
 
         <p class="contatos">Todos os contatos</p>
-
         <div class="d-flex ms-4 align-items-center">
             <p class="icon-verde fw-bold">JS</p>
             <div class="d-flex align-items-center ms-4 pb-3">
@@ -66,7 +64,7 @@
             </div>
         </div>
 
-        <button class="btn">Transferir</button>
+        <button class="btn disabled" id="botaoTransferir" disabled>Transferir</button>
     </form>
 
 </main>
@@ -76,5 +74,22 @@
     </a>
     <img class="footer-logo ms-2" src="../assets/images/logo.svg">
 </footer>
+<script>
+
+    function verificaValor(){
+        const saldoDisponivel = <%=saldo%>
+        const valorTransferencia = parseFloat(document.getElementById("valorTransacao").value);
+        const botaoTransferir = document.getElementById("botaoTransferir");
+
+        if (!isNaN(valorTransferencia) && valorTransferencia > 0 && valorTransferencia <= saldoDisponivel) {
+            botaoTransferir.disabled = false;
+            botaoTransferir.classList.remove("disabled");
+        } else {
+            botaoTransferir.disabled = true;
+            botaoTransferir.classList.add("disabled");
+        }
+
+    }
+</script>
 </body>
 </html>

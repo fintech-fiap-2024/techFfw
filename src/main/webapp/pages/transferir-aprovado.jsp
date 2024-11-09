@@ -1,5 +1,7 @@
+<%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>Transferência aprovada</title>
@@ -23,7 +25,7 @@
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mt-4 mx-4 fs-2">
             <p class="fw-bold">Valor</p>
-            <p class="fw-light">R$200,00</p>
+            <p class="fw-light">R$<%=valorTransacao%>></p>
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mx-4 fs-2">
             <p class="fw-bold">Instituição</p>
