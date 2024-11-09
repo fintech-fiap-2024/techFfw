@@ -20,10 +20,10 @@
         </div>
     </header>
     <main>
-        <form class="m-3 m-md-5">
+        <form class="m-3 m-md-5" action="/techFfw/objetivo" method="post">
             <div class="d-flex flex-column">
                 <label class="my-2" for="obj">Descrição do Objetivo</label>
-                <textarea id="obj" name="obj" rows="4" cols="50"></textarea>
+                <textarea id="obj" name="descricao" rows="4" cols="50"></textarea>
             </div>
             <div class="input-container d-flex flex-column">
                 <label class="my-2" for="valor">Valor do seu objetivo:</label>

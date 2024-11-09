@@ -1,7 +1,9 @@
 package br.com.fiap.ffw.techffw.factory;
 
+import br.com.fiap.ffw.techffw.dao.ObjetivoFinanceiroDao;
 import br.com.fiap.ffw.techffw.dao.ReceitaDao;
 import br.com.fiap.ffw.techffw.dao.UsuarioDao;
+import br.com.fiap.ffw.techffw.dao.impl.OracleObjetivoFinanceiroDAO;
 import br.com.fiap.ffw.techffw.dao.impl.OracleReceitaDao;
 import br.com.fiap.ffw.techffw.dao.impl.OracleUsuarioDao;
 
@@ -12,5 +14,5 @@ public class DaoFactory {
     public static ReceitaDao getReceitaDao() {
         return new OracleReceitaDao();
     }
-    
+    public static ObjetivoFinanceiroDao getObjetivoFinanceiroDao() { return new OracleObjetivoFinanceiroDAO();}
 }
