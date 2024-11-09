@@ -19,7 +19,7 @@ body {
 }
 
 main {
-    height: 100vh;
+    height: max-content;
     margin: 24px 12px;
     background-color: rgb(217, 217, 217, 0.1);
     border-radius: 8px;
@@ -79,8 +79,20 @@ h1 {
     width: 48px;
 }
 
+.dir-reservados {
+    text-align: center;
+    margin: 24px 0 0 0;
+}
+
+
 footer {
     background-color: var(--bs-purple);
+
+}
+
+.rodape {
+    margin: 0 auto;
+    max-width: 900px;
     height: 70px;
     width: 100vw;
     padding: 16px;
