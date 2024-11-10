@@ -11,7 +11,7 @@ public class Receita extends MovimentacaoFinanceira {
 
     public Receita(int codMovimentacao, int codConta, int identificadorExterno, double valorMovimentacao, LocalDate dataMovimentacao, String tipoMovimentacao, String categoria, int codUsuario ,String nomeMandatario, String descricaoReceita) {
         super(codMovimentacao, codConta, identificadorExterno, valorMovimentacao, dataMovimentacao, tipoMovimentacao, categoria);
-        this.codUsuario = codConta;
+        this.codUsuario = codUsuario;
         this.nomeMandatario = nomeMandatario;
         this.descricaoReceita = descricaoReceita;
     }
