@@ -32,7 +32,7 @@
     <div class="container my-4">
         <div class="form-section">
             <h2>DADOS DO USUÁRIO</h2>
-            <form action="" method="post">
+            <form action="/techFfw/usuarios" method="post">
                 <div class="mb-3">
                     <label class="form-label">Nome:</label>
                     <label><%= nome%></label>
@@ -47,11 +47,11 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Telefone:</label>
-                    <input type="tel" class="form-control" name="telefone" placeholder="Telefone">
+                    <input type="tel" class="form-control" name="telefone" placeholder="<%= user.getTelefone()!=null ? user.getTelefone() : "(12)34567-8910"%>">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Data de Nascimento:</label>
-                    <input type="date" class="form-control" name="dataNasc">
+                    <input type="date" class="form-control" name="dataNasc" value="<%=user.getDataNasc()%>">
                 </div>
                 <input type="hidden" name="acaoUsuario" value="atualizarDados">
                 <button class="btn">Salvar Dados</button>

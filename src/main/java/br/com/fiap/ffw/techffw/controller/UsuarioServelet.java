@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Objects;
 
 
@@ -79,8 +80,12 @@ public class UsuarioServelet extends HttpServlet {
             HttpSession session = req.getSession();
             Usuario user = (Usuario) session.getAttribute("user");
             String telefone = req.getParameter("telefone");
-            String data = req.getParameter("data");
+            user.setDataNasc(LocalDate.parse(req.getParameter("dataNasc")));
 
+            user.setTelefone(telefone);
+
+            dao.atualizarDados(user);
+            resp.sendRedirect(req.getContextPath()+"/pages/menu.jsp");
 
         }
     }

@@ -15,7 +15,7 @@ public class Usuario {
     private String senha;
     private String cpf;
     private String telefone;
-    private Date dataNasc;
+    private LocalDate dataNasc;
     private float limiteDisponivel;
     private String proximoPagamento;
     private double saldo;
@@ -52,6 +52,8 @@ public class Usuario {
         this.contaCorrente = 123456;
         this.endereco = null;
         this.saldo=saldo;
+        this.dataNasc=data;
+        this.telefone=telefone;
     }
 
     public String getTelefone() {
@@ -62,11 +64,11 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public Date getDataNasc() {
+    public LocalDate getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(Date dataNasc) {
+    public void setDataNasc(LocalDate dataNasc) {
         this.dataNasc = dataNasc;
     }
 

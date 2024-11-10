@@ -157,22 +157,21 @@ public class OracleUsuarioDao implements UsuarioDao {
     }
 
     @Override
-    public void atualizarDados(Usuario usuario, String novaSenha){
+    public void atualizarDados(Usuario usuario){
         PreparedStatement stmt = null;
 
         Connection connection = ConnectionManager.getInstance().getConnection();
         String sql = "UPDATE T_FFW_USUARIO SET " +
-                "senha = ? WHERE cod_usuario = ?";
-
+                "telefone = ?, data_nasc=? WHERE cod_usuario = ?";
 
         try {
             stmt = connection.prepareStatement(sql);
-            stmt.setString(1, novaSenha);
-            stmt.setInt(2, usuario.getId());
+            stmt.setString(1, usuario.getTelefone());
+            stmt.setDate(2, java.sql.Date.valueOf(usuario.getDataNasc()));
+            stmt.setInt(3, usuario.getId());
             stmt.executeUpdate();
 
-            System.out.println("Senha atualizada com sucesso");
-
+            System.out.println("Dados atualizados com sucesso");
 
         } catch (SQLException e) {
             e.printStackTrace();
