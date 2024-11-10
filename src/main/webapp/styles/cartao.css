@@ -51,17 +51,32 @@ h1 {
     background: var(--bs-success);
 }
 
-.cartao {
-    margin-top: 64px;
+h2 {
+    margin-top: 48px;
+}
+
+.cartao-container {
+    position: relative;
+    width: 65%;
 }
 
 .cartao-fisico {
-    width: 60%;
+    width: 100%;
+    height: auto;
 }
 
-.cartao p {
-
+.nome-cartao {
+    position: absolute;
+    top: 78%;
+    left: 8%;
+    transform: translate(-15%, -40%);
+    color: var(--bs-gray);
+    font-weight: lighter;
+    font-size: 0.8em;
+    white-space: nowrap;
+    pointer-events: none;
 }
+
 
 .icon {
     display: flex;
@@ -109,9 +124,20 @@ footer {
     height: 42px;
 }
 
+@media (min-width: 560px) {
+    .nome-cartao {
+        font-size: 1.2em;
+    }
+}
+
 @media (min-width: 764px) {
     main {
         margin: 12px auto;
         max-width: 900px;
+    }
+
+    .nome-cartao {
+        font-size: 2em;
+
     }
 }

@@ -27,7 +27,10 @@
         <h1>Meus cartões</h1>
         <div class="cartao d-flex flex-column justify-content-center align-items-center">
             <h2>Cartão físico</h2>
-            <img class="cartao-fisico" src="../assets/images/cartao-fisico.svg">
+            <div class="cartao-container">
+                <img class="cartao-fisico" src="../assets/images/cartao-fisico.svg" alt="Imagem do Cartão">
+                <p class="nome-cartao"><%= user.getNome() %></p>
+            </div>
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mt-4 mx-4 fs-3 fw-bold">
             <p>Nome</p>

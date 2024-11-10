@@ -30,7 +30,7 @@
         <form class="m-3 m-md-5" action="/techFfw/objetivo" method="post">
             <div class="d-flex flex-column">
                 <label class="my-2" for="obj">Descrição do Objetivo</label>
-                <textarea id="obj" name="descricao" rows="4" cols="50"></textarea>
+                <textarea id="obj" name="descricao" rows="4" cols="50" maxlength="50"></textarea>
             </div>
             <div class="input-container d-flex flex-column">
                 <label class="my-2" for="valor">Valor do seu objetivo:</label>
@@ -47,19 +47,20 @@
         </form>
         <div id="objetivos-container">
             <c:forEach items="${objetivoFinanceiroList}" var="objetivo">
-                <div class=" d-flex align-items-center"> <!-- transformar isso aqui em card -->
-                    <p>${objetivo.descricaoObjetivo} -R$ ${objetivo.valorObjetivo} - ${objetivo.dataObjetivo}</p>
+                <div class="d-flex flex-row align-items-center justify-content-around m-3 m-md-5">
+                    <p class="objetivo-text"><span id="meuParagrafo"> ${objetivo.descricaoObjetivo} </span>|<span class="valor-obj"> R$ ${objetivo.valorObjetivo} </span>| ${objetivo.dataObjetivo}</p>
                     <form action="/techFfw/objetivo" method="post">
                         <input name="acao" value="excluir" type="hidden">
                         <input name="idObjetivo" value="${objetivo.codObjetivo}" type="hidden">
-                        <button type="submit">X</button>
+                        <button class="btn-obj" type="submit">
+                            <img src="../assets/icons/lixeira.svg">
+                        </button>
                     </form>
                 </div>
-
+                <p class="align-items-center justify-content-around"></p>
             </c:forEach>
         </div>
     </main>
-    <!-- Modal -->
     <div
             class="modal fade"
             id="excluirModal"
@@ -113,12 +114,35 @@
             </div>
         </div>
     </div>
-    <%--    fim modal--%>
-    <footer class="rodape d-flex justify-content-around align-items-center">
-        <a class="link-footer" href="menu.jsp">
-            <img class="img-footer" src="../assets/icons/menu.svg">
-        </a>
-        <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+    <p class="dir-reservados">© 2024 Todos os direitos reservados</p>
+    <footer>
+        <div class="rodape d-flex justify-content-between align-items-center">
+            <a class="link-footer" href="menu.jsp">
+                <img class="img-footer" src="../assets/icons/menu.svg">
+            </a>
+            <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+        </div>
     </footer>
+    <script>
+        function quebrarParagrafo(elemento, maxCaracteres) {
+            let texto = elemento.textContent;
+            let palavras = texto.split('');
+            let linhaAtual = '';
+
+            for (let i = 0; i < palavras.length; i++) {
+                linhaAtual += palavras[i];
+                if ((i + 1) % maxCaracteres === 0) {
+                    elemento.innerHTML += linhaAtual + '<br>';
+                    linhaAtual = '';
+                }
+            }
+
+            if (linhaAtual) {
+                elemento.innerHTML += linhaAtual;
+            }
+        }
+
+        quebrarParagrafo(document.getElementById('meuParagrafo'), 24);
+    </script>
 </body>
 </html>

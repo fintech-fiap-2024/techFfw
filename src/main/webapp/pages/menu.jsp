@@ -31,12 +31,13 @@
         </div>
     </header>
     <main>
-
         <div class="saldo">
             <p>Saldo</p>
-            <img src="../assets/icons/olho-branco.svg">
+            <button class="btn-olho">
+                <img src="../assets/icons/olho-branco.svg" onclick="toggleSaldo()" id="toggle-icon">
+            </button>
         </div>
-        <p class="valor">$ <%=saldo%></p>
+        <p class="valor">R$ <%=saldo%></p>
         <div class="menu-icons d-flex flex-row justify-content-between justify-content-lg-around">
             <div class="d-flex flex-column align-items-center">
                 <a class="menu-icon" href="movimentos.jsp">
@@ -89,5 +90,19 @@
             <img class="relatorio" src="../assets/images/relatorios.svg">
         </div>
     </main>
+    <script>
+        function toggleSaldo() {
+            const saldoTexto = document.querySelector('.valor');
+            const icon = document.getElementById('toggle-icon');
+
+            if (saldoTexto.innerText === 'R$ <%= saldo %>') {
+                saldoTexto.innerText = 'R$ --------';
+                icon.src = "../assets/icons/olho-fechado.svg";
+            } else {
+                saldoTexto.innerText = 'R$ <%= saldo %>';
+                icon.src = "../assets/icons/olho-branco.svg";
+            }
+        }
+    </script>
 </body>
 </html>

@@ -52,6 +52,20 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
+.objetivo-text {
+    margin: 6px auto;
+}
+
+.valor-obj {
+    color: var(--bs-success);
+    font-weight: bold;
+}
+
+.btn-obj {
+    background-color: rgb(217, 217, 217, 0.1);
+    border: none;
+}
+
 .btn {
     width: 48%;
     border-radius: 8px;
@@ -65,8 +79,22 @@ main {
     background-color: var(--bs-info);
 }
 
+.dir-reservados {
+    text-align: center;
+    padding-bottom: 64px;
+}
+
 footer {
     background-color: var(--bs-purple);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.rodape {
+    margin: 0 auto;
+    max-width: 900px;
     height: 70px;
     width: 100vw;
     padding: 16px;
@@ -80,6 +108,7 @@ footer {
 .footer-logo {
     height: 42px;
 }
+
 
 @media (min-width: 764px) {
     main {
