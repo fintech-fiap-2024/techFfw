@@ -58,7 +58,7 @@ public class ObjetivoFinanceiroServelet extends HttpServlet {
             try {
                 dao.criarObjetivo(objetivo, userId);
                 req.setAttribute("objetivo", "objetivo cadastrado com sucesso");
-                resp.sendRedirect("pages/objetivo-financeiro.jsp");
+                resp.sendRedirect("pages/menu.jsp");
             } catch (DBException e) {
                 e.printStackTrace();
                 req.setAttribute("msgErro", "erro ao cadastrar objetivo");

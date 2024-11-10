@@ -38,6 +38,7 @@
                 <a href="../index.jsp">
                     <img src="../assets/icons/esq.svg">
                 </a>
+                <input type="hidden" name="acaoUsuario" value="cadastrar">
                 <input class="btn" type="submit" value="Salvar">
             </div>
             <div class="acesse-com-container">

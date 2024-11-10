@@ -1,10 +1,12 @@
 package br.com.fiap.ffw.techffw.dao.impl;
 
 import br.com.fiap.ffw.techffw.dao.ConnectionManager;
+import br.com.fiap.ffw.techffw.dao.EnderecoDao;
 import br.com.fiap.ffw.techffw.dao.ObjetivoFinanceiroDao;
 import br.com.fiap.ffw.techffw.dao.UsuarioDao;
 import br.com.fiap.ffw.techffw.exception.DBException;
 import br.com.fiap.ffw.techffw.factory.DaoFactory;
+import br.com.fiap.ffw.techffw.model.Endereco;
 import br.com.fiap.ffw.techffw.model.ObjetivoFinanceiro;
 import br.com.fiap.ffw.techffw.model.Usuario;
 
@@ -204,6 +206,10 @@ public class OracleUsuarioDao implements UsuarioDao {
                 List<ObjetivoFinanceiro> objetivoFinanceiros = objetivoFinanceiroDao.buscarObjetivos(id);
                 user.setObjetivoFinanceiros(objetivoFinanceiros);
 
+                EnderecoDao enderecoDao = DaoFactory.getEnderecoDao();
+                Endereco temp = enderecoDao.buscarEndereco(user.getId());
+                user.setEndereco(temp);
+
                 System.out.println("Usuário encontrado com sucesso");
             }
 
@@ -220,6 +226,7 @@ public class OracleUsuarioDao implements UsuarioDao {
                 e.printStackTrace();
             }
         }
+
         return user;
     }
 

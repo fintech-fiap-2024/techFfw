@@ -6,6 +6,6 @@ import br.com.fiap.ffw.techffw.model.Endereco;
 public interface EnderecoDao {
     void criarEndereco(Endereco endereco)throws DBException;
     void atualizarEndereco(Endereco endereco)throws DBException;
-    void remover(int id) throws DBException;
-    Endereco buscarEndereco(int id) throws DBException;
+    void cadastrarEndereco(Endereco endereco,int userId) throws DBException;
+    Endereco buscarEndereco(int userId) throws DBException;
 }
