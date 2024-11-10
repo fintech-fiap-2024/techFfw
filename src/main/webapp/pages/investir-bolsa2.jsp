@@ -80,8 +80,8 @@
                 }
             %>
 
-            <a class="comprar d-flex justify-content-center" href="investir-bolsa3.jsp?acaoId=<%= acaoId %>&preco=<%= acaoDetalhes[1] %>&saldo=<%= saldoDisponivel %>">
-                <button class="btn" type="submit">Continuar</button>
+            <a class="comprar d-flex justify-content-center" href="#">
+                <button class="btn" type="button">Aplicar</button>
             </a>
         </div>
     </main>

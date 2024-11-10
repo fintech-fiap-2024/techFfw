@@ -79,26 +79,19 @@
             console.log(preco)
             console.log(saldo)
 
-
-            // Capturar a quantidade digitada pelo usuário
             let quantidade = parseInt(document.getElementById("quantidade").value);
             console.log(quantidade)
-            // Se a quantidade não for um número válido, define como 0
+
             if (isNaN(quantidade) || quantidade < 1) {
                 quantidade = 0;
             }
 
-            // Calcula o total
             let total = precoPorUnidade * quantidade;
             console.log(total)
 
-            // Atualizar o valor total no frontend
             document.getElementById("totalValor").innerText = total.toFixed(2).replace('.', ',');
         }
 
-
-
-        // Garantir que o total seja calculado ao carregar a página
         window.onload = calcularTotal;
     </script>
 </body>

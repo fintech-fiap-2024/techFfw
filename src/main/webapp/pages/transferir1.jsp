@@ -77,22 +77,21 @@
             <img class="footer-logo ms-2" src="../assets/images/logo.svg">
         </div>
     </footer>
-<script>
+    <script>
+        function verificaValor(){
+            const saldoDisponivel = <%=saldo%>
+            const valorTransferencia = parseFloat(document.getElementById("valorTransacao").value);
+            const botaoTransferir = document.getElementById("botaoTransferir");
 
-    function verificaValor(){
-        const saldoDisponivel = <%=saldo%>
-        const valorTransferencia = parseFloat(document.getElementById("valorTransacao").value);
-        const botaoTransferir = document.getElementById("botaoTransferir");
+            if (!isNaN(valorTransferencia) && valorTransferencia > 0 && valorTransferencia <= saldoDisponivel) {
+                botaoTransferir.disabled = false;
+                botaoTransferir.classList.remove("disabled");
+            } else {
+                botaoTransferir.disabled = true;
+                botaoTransferir.classList.add("disabled");
+            }
 
-        if (!isNaN(valorTransferencia) && valorTransferencia > 0 && valorTransferencia <= saldoDisponivel) {
-            botaoTransferir.disabled = false;
-            botaoTransferir.classList.remove("disabled");
-        } else {
-            botaoTransferir.disabled = true;
-            botaoTransferir.classList.add("disabled");
         }
-
-    }
-</script>
+    </script>
 </body>
 </html>

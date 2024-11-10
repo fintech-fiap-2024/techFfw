@@ -30,6 +30,7 @@ header {
 body {
     background-image: linear-gradient(#22064C,#490CA4);
 }
+
 .area-confi div{
     width: 100%;
 
@@ -49,9 +50,6 @@ body {
 }
 label {
     color: var(--bs-light);
-}
-.texto-conf {
-    font-size: 50px;
 }
 .area-link .link-1{
     flex: 1;

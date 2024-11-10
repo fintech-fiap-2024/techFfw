@@ -15,28 +15,27 @@
         </a>
         <h1 class="fs-1">CONFIGURAÇÕES</h1>
     </header>
-
     <div class="d-lg-flex justify-content-evenly">
         <div class="area-confi">
             <a class="area-link d-flex align-items-center text-decoration-none text-dark" href="./perfil.jsp">
-                <div class=" link-1 icone me-2"><img  width="60"  src="../assets/icons/dados-pessoais.svg"></div>
-                <div class=" link-2 me-2">
-                    <label class="texto-conf fs-1">Dados Pesoais</label>
+                <div class="link-1 icone me-1"><img  width="40"  src="../assets/icons/dados-pessoais.svg"></div>
+                <div class="link-2">
+                    <label class="fs-2">Dados Pesoais</label>
                     <br>
-                    <label class="texto-conf fs-2">Informações gerais do usuário</label>
+                    <label class="fs-4">Informações gerais do usuário</label>
                 </div>
-                <div class="link-3"><img class="" width="20" src="../assets/icons/dir.svg"></div>
+                <div class="link-3"><img class="" width="12" src="../assets/icons/dir.svg"></div>
             </a>
         </div>
         <div class="area-confi">
             <a class="area-link d-flex align-items-center text-decoration-none text-dark" href="./seguranca.jsp">
-                <div class=" link-1 icone me-2"><img  width="60" src="../assets/icons/seguranca.svg"></div>
-                <div class=" link-2 me-2">
-                    <label class="texto-conf fs-1">Segurança</label>
+                <div class="link-1 icone me-1"><img  width="40" src="../assets/icons/seguranca.svg"></div>
+                <div class="link-2">
+                    <label class="fs-2">Segurança</label>
                     <br>
-                    <label class="texto-conf fs-2">Informações gerais do usuário</label>
+                    <label class="fs-4">Informações gerais do usuário</label>
                 </div>
-                <div class="link-3"><img class="" width="20" src="../assets/icons/dir.svg"></div>
+                <div class="link-3"><img class="" width="12" src="../assets/icons/dir.svg"></div>
             </a>
         </div>
     </div>

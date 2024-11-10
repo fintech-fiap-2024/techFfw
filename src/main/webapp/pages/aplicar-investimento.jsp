@@ -52,7 +52,6 @@
             <img class="footer-logo ms-2" src="../assets/images/logo.svg">
         </div>
     </footer>
-
     <script>
         function validarAplicacao() {
             const valorAplicacao = document.getElementById("valorAplicacao").value;
@@ -68,7 +67,6 @@
                 botaoAplicar.disabled=true;
                 botaoAplicar.classList.add("disabled");
             }
-
         }
     </script>
 </body>
