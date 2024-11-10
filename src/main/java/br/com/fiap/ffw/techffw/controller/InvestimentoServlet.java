@@ -36,10 +36,9 @@ public class InvestimentoServlet extends HttpServlet {
 
         Usuario usuario = (Usuario) session.getAttribute("user");
 
-        String tipoInvestimento = req.getParameter("tipoInvestimento");
+        String tipoInvestimento = req.getParameter("tipoAplicacao");
         double valor = Double.parseDouble(req.getParameter("valorAplicacao"));
         LocalDate data = LocalDate.now();
-
         Investimento investimento = new Investimento(0, usuario.getId(), tipoInvestimento,"Investimento", valor, data );
 
 

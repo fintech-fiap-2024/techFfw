@@ -34,7 +34,7 @@
             <p>Validade</p>
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mx-4 fs-3">
-            <p>Jackie Tequila</p>
+            <p><%=user.getNome()%></p>
             <p>07/27</p>
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mt-4 mx-4 fs-3 fw-bold">

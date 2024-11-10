@@ -36,6 +36,7 @@
                 <label for="valorAplicacao">Valor para aplicar:</label>
                 <input type="number" id="valorAplicacao" name="valorAplicacao" placeholder="Mínimo: R$ <%= aplicacaoMinima %>" step="0.01" oninput="validarAplicacao()" required>
                 <input type="hidden" id="aplicacaoMinima" value="<%= aplicacaoMinima %>">
+                <input type="hidden" name="tipoAplicacao" value="<%=nomeAplicacao%>">
                 <a class="transferir d-flex justify-content-center" >
                     <button class="btn disabled" type="submit" id="aplicar" disabled>Aplicar</button>
                 </a>
