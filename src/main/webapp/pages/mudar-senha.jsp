@@ -18,13 +18,13 @@
     <h1 class="fs-1">ALTERAR SENHA</h1>
   </header>
   <div class="area-form">
-    <form action="" method="post">
+    <form action="/techFfw/atualizarSenha" method="post">
       <div class=" d-flex flex-column justify-content-center align-items-center">
         <label class="label-altera" for="senha">Digite a nova senha</label>
-        <input  class="input-altera" type="text" id="senha" name="senha" placeholder="Nova senha" required>
+        <input  class="input-altera" type="text" id="senha" name="novaSenha" placeholder="Nova senha" required>
       </div>
       <div class="d-flex flex-column justify-content-center align-items-center">
-        <button class="btn botao-altera" type="button">Salvar</button>
+        <button class="btn botao-altera" type="submit">Salvar</button>
       </div>
     </form>
   </div>

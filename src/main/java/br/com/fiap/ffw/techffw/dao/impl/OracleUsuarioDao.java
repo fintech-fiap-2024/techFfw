@@ -3,12 +3,17 @@ package br.com.fiap.ffw.techffw.dao.impl;
 import br.com.fiap.ffw.techffw.dao.ConnectionManager;
 import br.com.fiap.ffw.techffw.dao.UsuarioDao;
 import br.com.fiap.ffw.techffw.exception.DBException;
+import br.com.fiap.ffw.techffw.model.ObjetivoFinanceiro;
 import br.com.fiap.ffw.techffw.model.Usuario;
 
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import static br.com.fiap.ffw.techffw.util.CriptografiaUtils.criptografar;
 
 
 public class OracleUsuarioDao implements UsuarioDao {
@@ -103,6 +108,36 @@ public class OracleUsuarioDao implements UsuarioDao {
         } catch (SQLException e) {
             e.printStackTrace();
             throw new DBException("Erro ao atualizar usuario.");
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void atualizarSenha(Usuario usuario, String novaSenha){
+        PreparedStatement stmt = null;
+
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        String sql = "UPDATE T_FFW_USUARIO SET " +
+                "senha = ? WHERE cod_usuario = ?";
+
+
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, novaSenha);
+            stmt.setInt(2, usuario.getId());
+            stmt.executeUpdate();
+
+            System.out.println("Senha atualizada com sucesso");
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         } finally {
             try {
                 stmt.close();
