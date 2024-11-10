@@ -61,7 +61,7 @@
             const saldo=<%=usuario.getSaldo()%>;
 
 
-            if (parseFloat(valorAplicacao) >= parseFloat(aplicacaoMinima) &&(parseFloat(valorAplicacao)<saldo)) {
+            if (parseFloat(valorAplicacao) >= parseFloat(aplicacaoMinima) &&(parseFloat(valorAplicacao)<=saldo)) {
                 botaoAplicar.disabled=false;
                 botaoAplicar.classList.remove("disabled");
             }else{

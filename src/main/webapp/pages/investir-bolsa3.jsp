@@ -1,11 +1,20 @@
+<%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%
     String acaoId = request.getParameter("acaoId");
     String precoPorUnidade = request.getParameter("preco");
-    String saldoDisponivel = request.getParameter("saldo");
+    String saldoDisponivel = request.getParameter("saldoDisponivel");
+    Usuario usuario = (Usuario) session.getAttribute("user");
+
+
+    // Adicionar esses valores como atributos para EL (Expression Language)
+    request.setAttribute("acaoId", acaoId);
+    request.setAttribute("precoPorUnidade", precoPorUnidade);
+    request.setAttribute("saldoDisponivel", saldoDisponivel);
 %>
+
 <html>
 <head>
     <title>Investir Bolsa - Quantidade</title>
@@ -26,8 +35,8 @@
         <div class="investir-container">
             <div class="d-flex flex-column align-items-center">
                 <h2 class="mt-5 mb-3">Qual o valor que será investido?</h2>
-                <p>Saldo disponível de <strong>R$${saldoDisponivel}</strong></p>
-                <p>Saldo disponível de <strong>R$ <%= saldoDisponivel != null ? saldoDisponivel : "0" %></strong></p>
+                <p>Saldo disponível de <strong>R$<%=usuario.getSaldo()%></strong></p>
+<%--                <p>Saldo disponível de <strong>R$ <%= saldoDisponivel != null ? saldoDisponivel : "0" %></strong></p>--%>
             </div>
 
             <form action="processar-investimento.jsp" method="post">
@@ -40,9 +49,9 @@
                </div>
 
                 <p class="fw-bold fs-2 ms-2 mt-4">Total</p>
-                <p class="fs-3 ms-2" id="total">R$ <span id="totalValor">${precoPorUnidade}</span></p>
+                <p class="fs-3 ms-2" id="total"> <span id="totalValor"><script>document.getElementById("totalValor").innerText = total.toFixed(2).replace('.', ',');</script></span></p>
 
-                <a class="comprar d-flex justify-content-center" href=investir-bolsa3.jsp?acaoId=${acaoId}&preco=${precoPorUnidade}&saldo=${saldoDisponivel}">
+                <a class="comprar d-flex justify-content-center" href=investir-bolsa3.jsp?acaoId=${acaoId}&preco=${precoPorUnidade}&saldo=<%=usuario.getSaldo()%>">
                     <button class="btn" type="submit">Comprar</button>
                 </a>
             </form>
@@ -59,24 +68,38 @@
     </footer>
 
     <script>
-        // Garantir que o valor de precoPorUnidade seja numérico
-        console.log(<%= precoPorUnidade %>)
-        let precoPorUnidade = parseFloat("<%= precoPorUnidade != null ? precoPorUnidade : '0' %>");
-
-        // Função para calcular o total com base na quantidade de ações
         function calcularTotal() {
-            let quantidade = parseInt(document.getElementById("quantidade").value);
+            let precoPorUnidade = parseFloat(document.getElementById("precoPorUnidade"));
+            let unidade = parseFloat(document.querySelector('#precoPorUnidade'))
+            let preco = document.getElementById("precoPorUnidade")
+            let saldo = <%=usuario.getSaldo()%>;
 
+            console.log(precoPorUnidade)
+            console.log(unidade)
+            console.log(preco)
+            console.log(saldo)
+
+
+            // Capturar a quantidade digitada pelo usuário
+            let quantidade = parseInt(document.getElementById("quantidade").value);
+            console.log(quantidade)
             // Se a quantidade não for um número válido, define como 0
             if (isNaN(quantidade) || quantidade < 1) {
                 quantidade = 0;
             }
 
+            // Calcula o total
             let total = precoPorUnidade * quantidade;
+            console.log(total)
 
             // Atualizar o valor total no frontend
-            document.getElementById("totalValor").innerText = total.toFixed(2);
+            document.getElementById("totalValor").innerText = total.toFixed(2).replace('.', ',');
         }
-    </script
+
+
+
+        // Garantir que o total seja calculado ao carregar a página
+        window.onload = calcularTotal;
+    </script>
 </body>
 </html>
