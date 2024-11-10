@@ -1,8 +1,10 @@
 package br.com.fiap.ffw.techffw.dao.impl;
 
 import br.com.fiap.ffw.techffw.dao.ConnectionManager;
+import br.com.fiap.ffw.techffw.dao.ObjetivoFinanceiroDao;
 import br.com.fiap.ffw.techffw.dao.UsuarioDao;
 import br.com.fiap.ffw.techffw.exception.DBException;
+import br.com.fiap.ffw.techffw.factory.DaoFactory;
 import br.com.fiap.ffw.techffw.model.ObjetivoFinanceiro;
 import br.com.fiap.ffw.techffw.model.Usuario;
 
@@ -196,13 +198,19 @@ public class OracleUsuarioDao implements UsuarioDao {
                 String senha = rs.getString("senha");
                 String cpf = rs.getString("cpf");
                 double saldo = rs.getDouble("saldo");
-                user = new Usuario(id, nomeCompleto, login, senha, cpf,saldo);                
-                System.out.println("Usuário encontrado com sucesso");
+                user = new Usuario(id, nomeCompleto, login, senha, cpf,saldo);
 
+                ObjetivoFinanceiroDao objetivoFinanceiroDao = DaoFactory.getObjetivoFinanceiroDao();
+                List<ObjetivoFinanceiro> objetivoFinanceiros = objetivoFinanceiroDao.buscarObjetivos(id);
+                user.setObjetivoFinanceiros(objetivoFinanceiros);
+
+                System.out.println("Usuário encontrado com sucesso");
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (DBException e) {
+            throw new RuntimeException(e);
         } finally {
             try {
                 stmt.close();

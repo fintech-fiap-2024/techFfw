@@ -75,7 +75,7 @@
             <p class="proximo-pagamento">Próximo pagamento: <%=user.getProximoPagamento()%></p>
             <hr>
         </div>
-        <a href="objetivo-financeiro.jsp" class="investimentos">
+        <a href="/techFfw/objetivo" class="investimentos">
             <img src="../assets/icons/investimentos.svg">
             <p>Objetivo Financeiro</p>
         </a>

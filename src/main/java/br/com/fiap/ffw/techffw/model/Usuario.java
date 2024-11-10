@@ -145,4 +145,19 @@ public class Usuario {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+    public void removerObjetivo(int idObjetivo) {
+        ObjetivoFinanceiro objetivoRemover = null;
+
+        for (ObjetivoFinanceiro objetivo : this.objetivoFinanceiros) {
+            if (objetivo.getCodObjetivo() == idObjetivo) {
+                objetivoRemover = objetivo;
+                break;
+            }
+        }
+
+        if (objetivoRemover != null) {
+            this.objetivoFinanceiros.remove(objetivoRemover);
+        }
+    }
 }

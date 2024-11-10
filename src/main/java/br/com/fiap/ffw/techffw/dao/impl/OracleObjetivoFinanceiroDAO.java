@@ -4,6 +4,7 @@ import br.com.fiap.ffw.techffw.dao.ConnectionManager;
 import br.com.fiap.ffw.techffw.dao.ObjetivoFinanceiroDao;
 import br.com.fiap.ffw.techffw.exception.DBException;
 import br.com.fiap.ffw.techffw.model.ObjetivoFinanceiro;
+import br.com.fiap.ffw.techffw.model.Usuario;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class OracleObjetivoFinanceiroDAO implements ObjetivoFinanceiroDao {
         ResultSet rs = null;
 
         connection = ConnectionManager.getInstance().getConnection();
-        String sql = "SELECT (cod_objetivo, descricao, valor, data) FROM T_FFW_OBJETIVO WHERE id_usuario = ?";
+        String sql = "SELECT cod_objetivo, descricao, valor, data_objetivo FROM T_FFW_OBJETIVO WHERE id_usuario = ?";
 
         try{
             stmt = connection.prepareStatement(sql);
@@ -58,7 +59,7 @@ public class OracleObjetivoFinanceiroDAO implements ObjetivoFinanceiroDao {
                 objetivo.setCodObjetivo(rs.getInt("cod_objetivo"));
                 objetivo.setDescricaoObjetivo(rs.getString("descricao"));
                 objetivo.setValorObjetivo(rs.getDouble("valor"));
-                objetivo.setDataObjetivo(rs.getDate("data").toLocalDate());
+                objetivo.setDataObjetivo(rs.getDate("data_objetivo").toLocalDate());
                 objetivoFinanceiros.add(objetivo);
             }
         } catch (SQLException e) {
@@ -82,7 +83,20 @@ public class OracleObjetivoFinanceiroDAO implements ObjetivoFinanceiroDao {
 
     @Override
     public void remover(int id) throws DBException {
+        PreparedStatement stmt = null;
 
+        connection = ConnectionManager.getInstance().getConnection();
+        String sql = "DELETE FROM T_FFW_OBJETIVO WHERE cod_objetivo = ?";
+
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+
+            System.out.println("Objetivo removido com sucesso!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
