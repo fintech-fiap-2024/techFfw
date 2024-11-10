@@ -48,9 +48,9 @@ public class OracleEnderecoDao implements EnderecoDao {
 
     private boolean existeEndereco(int userId) throws DBException {
         String sql = "SELECT * FROM T_FFW_ENDERECO WHERE id_usuario = ?";
+        PreparedStatement stmt = null;
         try {
-            connection = ConnectionManager.getInstance().getConnection();
-            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt = connection.prepareStatement(sql);
             stmt.setInt(1, userId);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {

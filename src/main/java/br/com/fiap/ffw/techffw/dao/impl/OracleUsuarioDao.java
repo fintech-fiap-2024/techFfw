@@ -157,6 +157,36 @@ public class OracleUsuarioDao implements UsuarioDao {
     }
 
     @Override
+    public void atualizarDados(Usuario usuario, String novaSenha){
+        PreparedStatement stmt = null;
+
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        String sql = "UPDATE T_FFW_USUARIO SET " +
+                "senha = ? WHERE cod_usuario = ?";
+
+
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, novaSenha);
+            stmt.setInt(2, usuario.getId());
+            stmt.executeUpdate();
+
+            System.out.println("Senha atualizada com sucesso");
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
     public void remover(int id) throws DBException {
         PreparedStatement stmt = null;
 
@@ -205,7 +235,13 @@ public class OracleUsuarioDao implements UsuarioDao {
                 String cpf = rs.getString("cpf");
                 double saldo = rs.getDouble("saldo");
                 String telefone = rs.getString("telefone");
-                LocalDate dataNasc = rs.getDate("data_nasc").toLocalDate();
+                LocalDate dataNasc=null;
+                if(rs.getDate("data_nasc") != null){
+                    dataNasc = rs.getDate("data_nasc").toLocalDate();
+                }else{
+                    dataNasc = LocalDate.now();
+                }
+
                 user = new Usuario(id, nomeCompleto, login, senha, cpf,saldo, telefone, dataNasc);
 
                 ObjetivoFinanceiroDao objetivoFinanceiroDao = DaoFactory.getObjetivoFinanceiroDao();

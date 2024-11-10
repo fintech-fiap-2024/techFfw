@@ -15,6 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Objects;
 
 
@@ -69,9 +70,18 @@ public class UsuarioServelet extends HttpServlet {
                 user.setEndereco(endereco);
             } catch (DBException e) {
                 throw new RuntimeException(e);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
             }
 
             resp.sendRedirect(req.getContextPath()+"/pages/menu.jsp");
+        } else if (Objects.equals(acaoUsuario, "atualizarDados")) {
+            HttpSession session = req.getSession();
+            Usuario user = (Usuario) session.getAttribute("user");
+            String telefone = req.getParameter("telefone");
+            String data = req.getParameter("data");
+
+
         }
     }
 

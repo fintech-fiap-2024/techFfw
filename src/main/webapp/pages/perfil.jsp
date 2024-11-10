@@ -36,26 +36,24 @@
                 <div class="mb-3">
                     <label class="form-label">Nome:</label>
                     <label><%= nome%></label>
-                    <input type="hidden" class="form-control" placeholder="<%= nome%>">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">CPF:</label>
                     <label><%= user.getCpf()%></label>
-                    <input type="hidden" class="form-control" placeholder="CPF">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">E-mail:</label>
                     <label><%= user.getLogin()%></label>
-                    <input type="hidden" class="form-control" placeholder="E-mail">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Telefone:</label>
-                    <input type="tel" class="form-control" placeholder="Telefone">
+                    <input type="tel" class="form-control" name="telefone" placeholder="Telefone">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Data de Nascimento:</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" name="dataNasc">
                 </div>
+                <input type="hidden" name="acaoUsuario" value="atualizarDados">
                 <button class="btn">Salvar Dados</button>
             </form>
         </div>
