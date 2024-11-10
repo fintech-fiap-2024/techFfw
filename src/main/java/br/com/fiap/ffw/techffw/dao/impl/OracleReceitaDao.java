@@ -55,7 +55,7 @@ public class OracleReceitaDao implements ReceitaDao {
             String receitaSql = "INSERT INTO T_FIN_RECEITA ( CD_MOVIMENTACAO,CD_USUARIO, NM_MANDATARIO, DS_RECEITA) VALUES (?, ?, ?, ?)";
             try (PreparedStatement stmtReceita = connection.prepareStatement(receitaSql)) {
                 stmtReceita.setInt(1, mvID);
-                stmtReceita.setInt(2, receita.getCodConta());
+                stmtReceita.setInt(2, receita.getCodUsuario());
                 stmtReceita.setString(3, receita.getNomeMandatario());
                 stmtReceita.setString(4, receita.getDescricaoReceita());
                 // Verificar o CD_USUARIO por que ou o banco não tem um relacionamento ou não está dando de passar o CD_USUARIO
