@@ -14,7 +14,9 @@ import br.com.fiap.ffw.techffw.model.Usuario;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static br.com.fiap.ffw.techffw.util.CriptografiaUtils.criptografar;
@@ -63,7 +65,7 @@ public class OracleUsuarioDao implements UsuarioDao {
         PreparedStatement stmt = null;
 
         Connection connection = ConnectionManager.getInstance().getConnection();
-        String sql = "INSERT INTO T_FFW_USUARIO (cod_usuario, nome_completo, login, senha, cpf) VALUES (SQ_TB_USUARIO.NEXTVAL,?,?,?,?)";
+        String sql = "INSERT INTO T_FFW_USUARIO (cod_usuario, nome_completo, login, senha, cpf, telefone, data_nasc) VALUES (SQ_TB_USUARIO.NEXTVAL,?,?,?,?,?,?)";
 
         System.out.println("Adicionando usuario: " + usuario.getLogin() + " senha: " + usuario.getSenha());
 
@@ -73,6 +75,8 @@ public class OracleUsuarioDao implements UsuarioDao {
             stmt.setString(2, usuario.getLogin());
             stmt.setString(3, usuario.getSenha());
             stmt.setString(4, usuario.getCpf());
+            stmt.setString(5, "00000000");
+            stmt.setDate(6, new java.sql.Date(new Date().getTime()));
             stmt.executeUpdate();
 
             System.out.println("Usuario registrado com sucesso");
@@ -200,7 +204,9 @@ public class OracleUsuarioDao implements UsuarioDao {
                 String senha = rs.getString("senha");
                 String cpf = rs.getString("cpf");
                 double saldo = rs.getDouble("saldo");
-                user = new Usuario(id, nomeCompleto, login, senha, cpf,saldo);
+                String telefone = rs.getString("telefone");
+                LocalDate dataNasc = rs.getDate("data_nasc").toLocalDate();
+                user = new Usuario(id, nomeCompleto, login, senha, cpf,saldo, telefone, dataNasc);
 
                 ObjetivoFinanceiroDao objetivoFinanceiroDao = DaoFactory.getObjetivoFinanceiroDao();
                 List<ObjetivoFinanceiro> objetivoFinanceiros = objetivoFinanceiroDao.buscarObjetivos(id);
