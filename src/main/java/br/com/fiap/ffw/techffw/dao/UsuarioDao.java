@@ -11,6 +11,7 @@ public interface UsuarioDao {
     void cadastrar(Usuario usuario) throws DBException;
     void atualizar(Usuario usuario) throws DBException;
     void atualizarSenha(Usuario usuario, String novaSenha);
+    void atualizarDados(Usuario usuario);
     void realizarSaque(Usuario usuario, double valor) throws DBException;
     void realizarDeposito(Usuario usuario, double valor) throws DBException;
     void remover(int id) throws DBException;

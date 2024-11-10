@@ -1,10 +1,15 @@
 <%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
+<%@ page import="br.com.fiap.ffw.techffw.model.Endereco" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%
     Usuario user = (Usuario) session.getAttribute("user");
     String nome = user.getNome();
+    Endereco endereco = null;
+    if(user.getEndereco()!=null){
+        endereco = user.getEndereco();
+    }
 %>
 
 <html>
@@ -15,47 +20,40 @@
     <link rel="stylesheet" href="../styles/perfil.css">
 </head>
 <body>
-<!--
-    to:do = adicionar botão de salvar e voltar ao final de cada sessão o
-    bloquear edição do email, pois como é chave primária não seria interessante alterar
--->
     <div class="profile-header">
         <div class="profile-icon">
             <a href="URL_DO_DESTINO">
                 <img src="../assets/icons/camera.svg" alt="Icone da Câmera">
             </a>
         </div>
-        <h1>NOME DO USUÁRIO</h1>
-        <p>Ag. xxxx-x - Cc. xxxxx-x</p>
+        <h1><%=nome%></h1>
+        <p>Ag. 1234-5 - Cc. 12345-6</p>
     </div>
     <div class="container my-4">
         <div class="form-section">
             <h2>DADOS DO USUÁRIO</h2>
-            <form>
+            <form action="/techFfw/usuarios" method="post">
                 <div class="mb-3">
-                    <label class="form-label readonly-field">Nome:</label>
-                    <input type="text" class="form-control" placeholder="<%= nome%>"  readonly>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Sobrenome:</label>
-                    <input type="text" class="form-control" placeholder="Sobrenome">
+                    <label class="form-label">Nome:</label>
+                    <label><%= nome%></label>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">CPF:</label>
-                    <input type="text" class="form-control" placeholder="CPF">
+                    <label><%= user.getCpf()%></label>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">E-mail:</label>
-                    <input type="email" class="form-control" placeholder="E-mail">
+                    <label><%= user.getLogin()%></label>
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Telefone:</label>
-                    <input type="tel" class="form-control" placeholder="Telefone">
+                    <input type="tel" class="form-control" name="telefone" placeholder="<%= user.getTelefone()!=null ? user.getTelefone() : "(12)34567-8910"%>">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Data de Nascimento:</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" name="dataNasc" value="<%=user.getDataNasc()%>">
                 </div>
+                <input type="hidden" name="acaoUsuario" value="atualizarDados">
                 <button class="btn">Salvar Dados</button>
             </form>
         </div>
@@ -64,32 +62,33 @@
     <div class="container my-4">
         <div class="form-section">
             <h2>ENDEREÇO DO USUÁRIO</h2>
-            <form>
+            <form action="/techFfw/usuarios" method="post">
                 <div class="mb-3">
                     <label class="form-label">Logradouro:</label>
-                    <input type="text" class="form-control" placeholder="Logradouro">
+                    <input type="text" class="form-control" placeholder="<%= endereco!=null ? endereco.getLogradouro() : "Logradouro" %>" name="logradouro">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Bairro:</label>
-                    <input type="text" class="form-control" placeholder="Bairro">
+                    <input type="text" class="form-control" placeholder="<%= endereco!=null ? endereco.getNomeBairro() : "Bairro" %>" name="bairro">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Cidade:</label>
-                    <input type="text" class="form-control" placeholder="Cidade">
+                    <input type="text" class="form-control" placeholder="<%= endereco!=null ? endereco.getNomeCidade() : "Cidade" %>" name="cidade">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Estado:</label>
-                    <input type="text" class="form-control" placeholder="Estado">
+                    <input type="text" class="form-control" placeholder="<%= endereco!=null ? endereco.getNomeEstado() : "Estado" %>" name="estado">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Número:</label>
-                    <input type="text" class="form-control" placeholder="Número">
+                    <input type="text" class="form-control" placeholder="<%= endereco!=null ? endereco.getNumeroCasa() : "Número" %>" name="numero">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Cep:</label>
-                    <input type="text" class="form-control" placeholder="Cep">
+                    <input type="text" class="form-control" placeholder="<%= endereco!=null ? endereco.getCep() : "CEP" %>" name="cep">
                 </div>
-                <button class="btn">Salvar Endereço</button>
+                <input type="hidden" name="acaoUsuario" value="alterarEndereco">
+                <button class="btn">Atualizar Endereço</button>
             </form>
         </div>
     </div>

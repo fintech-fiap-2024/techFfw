@@ -2,6 +2,8 @@ package br.com.fiap.ffw.techffw.model;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import static br.com.fiap.ffw.techffw.util.CriptografiaUtils.criptografar;
@@ -12,6 +14,8 @@ public class Usuario {
     private String login;
     private String senha;
     private String cpf;
+    private String telefone;
+    private LocalDate dataNasc;
     private float limiteDisponivel;
     private String proximoPagamento;
     private double saldo;
@@ -36,7 +40,7 @@ public class Usuario {
         this.saldo=0;
     }
 
-    public Usuario(int id, String nome, String login, String senha, String cpf,double saldo) {
+    public Usuario(int id, String nome, String login, String senha, String cpf, double saldo, String telefone, LocalDate data) {
         this.id = id;
         this.nome = nome;
         this.login = login;
@@ -48,6 +52,24 @@ public class Usuario {
         this.contaCorrente = 123456;
         this.endereco = null;
         this.saldo=saldo;
+        this.dataNasc=data;
+        this.telefone=telefone;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public LocalDate getDataNasc() {
+        return dataNasc;
+    }
+
+    public void setDataNasc(LocalDate dataNasc) {
+        this.dataNasc = dataNasc;
     }
 
     public List<ObjetivoFinanceiro> getObjetivoFinanceiros() {
