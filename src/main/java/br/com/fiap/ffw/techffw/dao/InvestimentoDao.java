@@ -5,7 +5,7 @@ import br.com.fiap.ffw.techffw.model.Investimento;
 
 public interface InvestimentoDao {
 
-    void criarInvestimento(Investimento investimento) throws DBException;
+    void criarInvestimento(Investimento investimento, int userId) throws DBException;
     void AtualizarInvestimento(Investimento investimento) throws DBException;
     void remover(int id) throws DBException;
     Investimento buscarInvestimento(int id) throws DBException;

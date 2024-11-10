@@ -93,6 +93,11 @@ footer {
     height: 42px;
 }
 
+.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 @media (min-width: 764px) {
     main {
         margin: 12px auto;

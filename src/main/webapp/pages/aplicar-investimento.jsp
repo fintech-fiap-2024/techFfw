@@ -5,6 +5,9 @@
 <%
     String nomeAplicacao = request.getParameter("nomeAplicacao"); // Recebe o nome da aplicação da página anterior
     String aplicacaoMinima = request.getParameter("aplicacaoMinima"); // Recebe o valor mínimo de aplicação
+    session.setAttribute("nomeAplicacao",nomeAplicacao);
+    Usuario usuario = (Usuario) session.getAttribute("user");
+
 %>
 
 <!DOCTYPE html>
@@ -29,12 +32,12 @@
     <main>
         <div class="container">
             <h1><%= nomeAplicacao %></h1>
-            <form action="investir-aprovado.jsp" method="post" onsubmit="return validarAplicacao()">
+            <form action="/techFfw/investimento" method="post">
                 <label for="valorAplicacao">Valor para aplicar:</label>
-                <input type="number" id="valorAplicacao" name="valorAplicacao" placeholder="Mínimo: R$ <%= aplicacaoMinima %>" required>
+                <input type="number" id="valorAplicacao" name="valorAplicacao" placeholder="Mínimo: R$ <%= aplicacaoMinima %>" step="0.01" oninput="validarAplicacao()" required>
                 <input type="hidden" id="aplicacaoMinima" value="<%= aplicacaoMinima %>">
                 <a class="transferir d-flex justify-content-center" >
-                    <button class="btn" type="submit">Aplicar</button>
+                    <button class="btn disabled" type="submit" id="aplicar" disabled>Aplicar</button>
                 </a>
             </form>
         </div>
@@ -53,12 +56,18 @@
         function validarAplicacao() {
             const valorAplicacao = document.getElementById("valorAplicacao").value;
             const aplicacaoMinima = document.getElementById("aplicacaoMinima").value;
+            const botaoAplicar = document.getElementById("aplicar");
+            const saldo=<%=usuario.getSaldo()%>;
 
-            if (parseFloat(valorAplicacao) < parseFloat(aplicacaoMinima)) {
-                alert("O valor para aplicar deve ser maior ou igual ao mínimo: R$ " + aplicacaoMinima);
-                return false;
+
+            if (parseFloat(valorAplicacao) >= parseFloat(aplicacaoMinima) &&(parseFloat(valorAplicacao)<saldo)) {
+                botaoAplicar.disabled=false;
+                botaoAplicar.classList.remove("disabled");
+            }else{
+                botaoAplicar.disabled=true;
+                botaoAplicar.classList.add("disabled");
             }
-            return true;
+
         }
     </script>
 </body>
