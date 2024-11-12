@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Prata&display=swap');
+
 :root {
     --bs-primary: #22064C !important;
     --bs-secondary: #490CA4 !important;
     --bs-success: #2DAE90 !important;
+    --bs-info: #2C8F82 !important;
     --bs-danger: #D72828 !important;
     --bs-purple: #31006F !important;
     --bs-light: #fff !important;
@@ -11,39 +14,40 @@
 }
 
 body {
-    background-color: var(--bs-primary);
+    background: linear-gradient(180deg, var(--bs-primary) 0%, var(--bs-secondary) 100%);
     color: var(--bs-light);
 }
 
-.deposit-header {
-    text-align: center;
-    padding: 1rem;
-    font-weight: bold;
-    font-size: 1.2rem;
+.menu-header {
+    display: flex;
+    justify-content: space-between;
 }
 
-.deposit-container {
-    background-color: var(--bs-secondary);
+.voltar {
+    margin: 24px;
+    width: 18px;
+}
+
+.logo-img {
+    margin: 24px 12px;
+    width: 36px;
+}
+
+h1 {
+    margin: 24px auto;
+}
+
+h2 {
+    padding-top: 24px;
+}
+
+main {
+    height: 100vh;
+    margin: 24px 12px;
+    background-color: rgb(217, 217, 217, 0.1);
     border-radius: 8px;
-    padding: 1.5rem;
-    color: var(--bs-light);
-    width: 90%; /* Faz o contêiner ocupar toda a largura */
-    min-height: calc(100vh - 150px); /* Ajusta para ocupar quase toda a altura */
-    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
-
-@media (max-width: 768px) {
-    .deposit-container {
-        padding: 1rem; /* Reduz o padding em dispositivos médios */
-    }
-}
-
-@media (max-width: 576px) {
-    .deposit-container {
-        padding: 0.75rem; /* Reduz ainda mais o padding para dispositivos pequenos */
-    }
-}
-
 
 .deposit-container h2 {
     font-size: 1rem;
@@ -83,6 +87,10 @@ body {
     border-radius: 5px;
 }
 
+.copy-btn:hover {
+    background-color: var(--bs-info);
+}
+
 .qr-code-container {
     text-align: center;
     margin-top: 1.5rem;
@@ -109,3 +117,39 @@ body {
     font-size: 1.5rem;
 }
 
+.dir-reservados {
+    text-align: center;
+    padding-bottom: 64px;
+}
+
+footer {
+    background-color: var(--bs-purple);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.rodape {
+    margin: 0 auto;
+    max-width: 900px;
+    height: 70px;
+    width: 100vw;
+    padding: 16px;
+}
+
+.img-footer {
+    height: 64px;
+    width: 64px;
+}
+
+.footer-logo {
+    height: 42px;
+}
+
+@media (min-width: 764px) {
+    main {
+        margin: 12px auto;
+        max-width: 900px;
+    }
+}

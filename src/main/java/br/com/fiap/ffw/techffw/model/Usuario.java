@@ -2,6 +2,9 @@ package br.com.fiap.ffw.techffw.model;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 
 import static br.com.fiap.ffw.techffw.util.CriptografiaUtils.criptografar;
 
@@ -11,13 +14,17 @@ public class Usuario {
     private String login;
     private String senha;
     private String cpf;
+    private String telefone;
+    private LocalDate dataNasc;
     private float limiteDisponivel;
     private String proximoPagamento;
-    private int saldo;
+    private double saldo;
     private int agencia, contaCorrente;
     private Endereco endereco;
+    List<ObjetivoFinanceiro> objetivoFinanceiros;
 
-
+    public Usuario() {
+    }
 
     public Usuario(int id, String nome, String login, String senha, String cpf) {
         this.id = id;
@@ -27,10 +34,54 @@ public class Usuario {
         this.cpf = cpf;
         this.limiteDisponivel = 10000;
         this.proximoPagamento = "24 Dez";
-        this.saldo = 1000;
         this.agencia = 1234-5;
         this.contaCorrente = 123456;
         this.endereco = null;
+        this.saldo=0;
+    }
+
+    public Usuario(int id, String nome, String login, String senha, String cpf, double saldo, String telefone, LocalDate data) {
+        this.id = id;
+        this.nome = nome;
+        this.login = login;
+        setSenha(senha);
+        this.cpf = cpf;
+        this.limiteDisponivel = 10000;
+        this.proximoPagamento = "24 Dez";
+        this.agencia = 1234-5;
+        this.contaCorrente = 123456;
+        this.endereco = null;
+        this.saldo=saldo;
+        this.dataNasc=data;
+        this.telefone=telefone;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public LocalDate getDataNasc() {
+        return dataNasc;
+    }
+
+    public void setDataNasc(LocalDate dataNasc) {
+        this.dataNasc = dataNasc;
+    }
+
+    public List<ObjetivoFinanceiro> getObjetivoFinanceiros() {
+        return objetivoFinanceiros;
+    }
+
+    public void setObjetivoFinanceiros(List<ObjetivoFinanceiro> objetivoFinanceiros) {
+        this.objetivoFinanceiros = objetivoFinanceiros;
+    }
+
+    public void adicionaObjetivo(ObjetivoFinanceiro objetivo) {
+        this.objetivoFinanceiros.add(objetivo);
     }
 
     public Endereco getEndereco() {
@@ -49,7 +100,7 @@ public class Usuario {
         return proximoPagamento;
     }
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
@@ -103,12 +154,32 @@ public class Usuario {
             throw new RuntimeException(e);
         }
     }
-
+    public void decrementarSaldo(double valor){
+        saldo -= valor;
+    }
+    public void incrementarSaldo(double valor){
+        saldo += valor;
+    }
     public String getCpf() {
         return cpf;
     }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public void removerObjetivo(int idObjetivo) {
+        ObjetivoFinanceiro objetivoRemover = null;
+
+        for (ObjetivoFinanceiro objetivo : this.objetivoFinanceiros) {
+            if (objetivo.getCodObjetivo() == idObjetivo) {
+                objetivoRemover = objetivo;
+                break;
+            }
+        }
+
+        if (objetivoRemover != null) {
+            this.objetivoFinanceiros.remove(objetivoRemover);
+        }
     }
 }

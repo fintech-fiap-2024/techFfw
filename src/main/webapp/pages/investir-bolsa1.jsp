@@ -10,24 +10,19 @@
 <body>
     <header>
         <div class="menu-header">
-            <a href="transferir1.jsp">
+            <a href="investir.jsp">
                 <img class="voltar" src="../assets/icons/esq.svg">
             </a>
             <h1>Investir</h1>
-            <a>
-                <img class="logo-img d-md-none" src="../assets/icons/qrcode.svg">
-            </a>
         </div>
     </header>
     <main>
         <div class="d-flex justify-content-center">
             <h2 class="my-4">Ações Brasileiras</h2>
         </div>
-
-
         <div class="ms-3 me-3">
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=ITUB4">
                     <div class="icon">
                         <img src="../assets/icons/itau.svg">
                     </div>
@@ -38,8 +33,8 @@
                 </a>
                 <p class="fw-bold">R$ 35,30</p>
             </div>
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=VALE3">
                     <div class="icon">
                         <img src="../assets/icons/vale.svg">
                     </div>
@@ -50,8 +45,8 @@
                 </a>
                 <p class="fw-bold">R$ 61,73</p>
             </div>
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=PTR4">
                     <div class="icon">
                         <img src="../assets/icons/petrobras.svg">
                     </div>
@@ -62,8 +57,8 @@
                 </a>
                 <p class="fw-bold">R$ 35,90</p>
             </div>
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=BBDC4">
                     <div class="icon">
                         <img src="../assets/icons/banco-do-brasil.svg">
                     </div>
@@ -74,8 +69,8 @@
                 </a>
                 <p class="fw-bold">R$ 14,93</p>
             </div>
-            <div class="d-flex justify-content-between align-items-center m-3">
-                <a class="acao d-flex" href="#">
+            <div class="acao d-flex justify-content-between align-items-center m-3">
+                <a class="acao-item d-flex" href="investir-bolsa2.jsp?acao=B3SA3">
                     <div class="icon">
                         <img src="../assets/icons/b3.svg">
                     </div>
@@ -88,5 +83,14 @@
             </div>
         </div>
     </main>
+    <p class="dir-reservados">© 2024 Todos os direitos reservados</p>
+    <footer>
+        <div class="rodape d-flex justify-content-between align-items-center">
+            <a class="link-footer" href="menu.jsp">
+                <img class="img-footer" src="../assets/icons/menu.svg">
+            </a>
+            <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+        </div>
+    </footer>
 </body>
 </html>

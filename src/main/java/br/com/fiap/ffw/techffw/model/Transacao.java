@@ -2,72 +2,80 @@ package br.com.fiap.ffw.techffw.model;
 
 import java.time.LocalDate;
 
-public class Transacao extends MovimentacaoFinanceira {
-    private String instituicaoFinanceira;
+public class Transacao {
+    private int codigo;
+    private int idUsuario;
     private String descricao;
+    private String nomeDestinatario;
     private String nomeRemetente;
-    private String nomeBeneficiario;
-    private String contaOrigem;
-    private String contaDestino;
-    private String statusTransacao;
+    private double valor;
+    private LocalDate data;
 
-    public Transacao(int codMovimentacao, int codConta, int identificadorExterno, double valorMovimentacao, LocalDate dataMovimentacao, String tipoMovimentacao, String categoria, String instituicaoFinanceira, String descricao, String nomeRemetente, String nomeBeneficiario, String contaOrigem, String contaDestino, String statusTransacao) {
-        super(codMovimentacao, codConta, identificadorExterno, valorMovimentacao, dataMovimentacao, tipoMovimentacao, categoria);
-        this.instituicaoFinanceira = instituicaoFinanceira;
+    public Transacao() {}
+
+    public Transacao(int codigo,int idUsuario, String descricao, String nomeDestinatario, String nomeRemetente, double valor, LocalDate data) {
+        this.codigo = codigo;
+        this.idUsuario = idUsuario;
         this.descricao = descricao;
+        this.nomeDestinatario = nomeDestinatario;
         this.nomeRemetente = nomeRemetente;
-        this.nomeBeneficiario = nomeBeneficiario;
-        this.contaOrigem = contaOrigem;
-        this.contaDestino = contaDestino;
-        this.statusTransacao = statusTransacao;
+        this.valor = valor;
+        this.data = data;
     }
 
-    public String getInstituicaoFinanceira() {
-        return instituicaoFinanceira;
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getDescricao() {
         return descricao;
     }
 
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public String getNomeDestinatario() {
+        return nomeDestinatario;
+    }
+
+    public void setNomeDestinatario(String nomeDestinatario) {
+        this.nomeDestinatario = nomeDestinatario;
+    }
+
     public String getNomeRemetente() {
         return nomeRemetente;
     }
 
-    public String getNomeBeneficiario() {
-        return nomeBeneficiario;
-    }
-
-    public String getContaOrigem() {
-        return contaOrigem;
-    }
-
-    public String getContaDestino() {
-        return contaDestino;
-    }
-
-    public String getStatusTransacao() {
-        return statusTransacao;
-    }
-
-    @Override
-    public void processarMovimentacao() {
-        System.out.println("----------------------------------");
-        System.out.println("Processando transação:");
-        System.out.println("Código da Movimentação: " + getCodMovimentacao());
-        System.out.println("Código da br.com.fintech.model.Conta: " + getCodConta());
-        System.out.println("Identificador Externo: " + getIdentificadorExterno());
-        System.out.println("Valor da Transação: R$ " + getValorMovimentacao());
-        System.out.println("Data da Movimentação: " + getDataMovimentacao());
-        System.out.println("Tipo de Movimentação: " + getTipoMovimentacao());
-        System.out.println("Categoria: " + getCategoria());
-        System.out.println("Instituição Financeira: " + getInstituicaoFinanceira());
-        System.out.println("Descrição: " + getDescricao());
-        System.out.println("Nome do Remetente: " + getNomeRemetente());
-        System.out.println("Nome do Beneficiário: " + getNomeBeneficiario());
-        System.out.println("br.com.fintech.model.Conta de Origem: " + getContaOrigem());
-        System.out.println("br.com.fintech.model.Conta de Destino: " + getContaDestino());
-        System.out.println("Status da Transação: " + getStatusTransacao());
-        System.out.println("----------------------------------");
+    public void setNomeRemetente(String nomeRemetente) {
+        this.nomeRemetente = nomeRemetente;
     }
 }

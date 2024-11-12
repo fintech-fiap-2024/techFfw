@@ -19,6 +19,7 @@ body {
 }
 
 main {
+    height: max-content;
     margin: 24px 12px;
     background-color: rgb(217, 217, 217, 0.1);
     border-radius: 8px;
@@ -50,17 +51,32 @@ h1 {
     background: var(--bs-success);
 }
 
-.cartao {
-    margin-top: 64px;
+h2 {
+    margin-top: 48px;
+}
+
+.cartao-container {
+    position: relative;
+    width: 65%;
 }
 
 .cartao-fisico {
-    width: 60%;
+    width: 100%;
+    height: auto;
 }
 
-.cartao p {
-
+.nome-cartao {
+    position: absolute;
+    top: 78%;
+    left: 8%;
+    transform: translate(-15%, -40%);
+    color: var(--bs-gray);
+    font-weight: lighter;
+    font-size: 0.8em;
+    white-space: nowrap;
+    pointer-events: none;
 }
+
 
 .icon {
     display: flex;
@@ -76,4 +92,52 @@ h1 {
 .icon > img {
     height: 48px;
     width: 48px;
+}
+
+.dir-reservados {
+    text-align: center;
+    padding-bottom: 64px;
+}
+
+footer {
+    background-color: var(--bs-purple);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.rodape {
+    margin: 0 auto;
+    max-width: 900px;
+    height: 70px;
+    width: 100vw;
+    padding: 16px;
+}
+
+.img-footer {
+    height: 64px;
+    width: 64px;
+}
+
+.footer-logo {
+    height: 42px;
+}
+
+@media (min-width: 560px) {
+    .nome-cartao {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 764px) {
+    main {
+        margin: 12px auto;
+        max-width: 900px;
+    }
+
+    .nome-cartao {
+        font-size: 2em;
+
+    }
 }

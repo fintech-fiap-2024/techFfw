@@ -1,5 +1,7 @@
+<%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 <head>
     <title>Transferência aprovada</title>
@@ -14,9 +16,6 @@
                 <img class="voltar" src="../assets/icons/esq.svg">
             </a>
             <h1>Transferir</h1>
-            <a>
-                <img class="logo-img d-md-none" src="../assets/icons/qrcode.svg">
-            </a>
         </div>
     </header>
     <main>
@@ -26,13 +25,19 @@
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mt-4 mx-4 fs-2">
             <p class="fw-bold">Valor</p>
-            <p class="fw-light">R$200,00</p>
+            <p class="fw-light">R$<%=valorTransacao%>></p>
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mx-4 fs-2">
             <p class="fw-bold">Instituição</p>
             <p class="fw-light">Santander LTDA</p>
         </div>
     </main>
+    <footer class="rodape d-flex justify-content-around align-items-center">
+        <a class="link-footer" href="menu.jsp">
+            <img class="img-footer" src="../assets/icons/menu.svg">
+        </a>
+        <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+    </footer>
 
 
 </body>

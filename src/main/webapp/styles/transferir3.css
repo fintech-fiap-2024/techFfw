@@ -33,7 +33,7 @@ h1 {
 }
 
 main {
-    height: fit-content;
+    height: 100vh;
     margin: 24px 12px;
     background-color: rgb(217, 217, 217, 0.1);
     border-radius: 8px;
@@ -70,9 +70,39 @@ main {
     background-color: var(--bs-info);
 }
 
+.dir-reservados {
+    text-align: center;
+    padding-bottom: 64px;
+}
+
+footer {
+    background-color: var(--bs-purple);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.rodape {
+    margin: 0 auto;
+    max-width: 900px;
+    height: 70px;
+    width: 100vw;
+    padding: 16px;
+}
+
+.img-footer {
+    height: 64px;
+    width: 64px;
+}
+
+.footer-logo {
+    height: 42px;
+}
+
 @media (min-width: 764px) {
     main {
         margin: 12px auto;
-        max-width: 600px;
+        max-width: 900px;
     }
 }

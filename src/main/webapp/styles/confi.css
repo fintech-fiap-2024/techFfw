@@ -12,7 +12,6 @@
 }
 
 header {
-    display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--bs-success);
@@ -22,12 +21,8 @@ header {
     color: var(--bs-light);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    .titulo {
-        font-size: 40px;
-        margin-left: 40px;
-    }
-
 }
+
 .voltar {
     margin: 24px;
     width: 18px;
@@ -35,6 +30,7 @@ header {
 body {
     background-image: linear-gradient(#22064C,#490CA4);
 }
+
 .area-confi div{
     width: 100%;
 
@@ -44,10 +40,7 @@ body {
     justify-content: center;
 }
 .area-link {
-    margin-top: 50px;
-    margin-bottom: 40px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin: 50px 60px 40px 60px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -57,9 +50,6 @@ body {
 }
 label {
     color: var(--bs-light);
-}
-.texto-conf {
-    font-size: 50px;
 }
 .area-link .link-1{
     flex: 1;

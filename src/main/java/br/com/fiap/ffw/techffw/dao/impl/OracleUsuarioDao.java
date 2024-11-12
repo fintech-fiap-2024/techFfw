@@ -1,14 +1,25 @@
 package br.com.fiap.ffw.techffw.dao.impl;
 
 import br.com.fiap.ffw.techffw.dao.ConnectionManager;
+import br.com.fiap.ffw.techffw.dao.EnderecoDao;
+import br.com.fiap.ffw.techffw.dao.ObjetivoFinanceiroDao;
 import br.com.fiap.ffw.techffw.dao.UsuarioDao;
 import br.com.fiap.ffw.techffw.exception.DBException;
+import br.com.fiap.ffw.techffw.factory.DaoFactory;
+import br.com.fiap.ffw.techffw.model.Endereco;
+import br.com.fiap.ffw.techffw.model.ObjetivoFinanceiro;
 import br.com.fiap.ffw.techffw.model.Usuario;
 
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import static br.com.fiap.ffw.techffw.util.CriptografiaUtils.criptografar;
 
 
 public class OracleUsuarioDao implements UsuarioDao {
@@ -20,7 +31,7 @@ public class OracleUsuarioDao implements UsuarioDao {
         PreparedStatement stmt = null;
         ResultSet rs = null;
 
-//        System.out.println("Buscando usuario: " + usuario.getLogin()+" senha: "+usuario.getSenha());
+        System.out.println("Buscando usuario: " + usuario.getLogin() + " senha: " + usuario.getSenha());
 
         try {
             conexao = ConnectionManager.getInstance().getConnection();
@@ -54,9 +65,9 @@ public class OracleUsuarioDao implements UsuarioDao {
         PreparedStatement stmt = null;
 
         Connection connection = ConnectionManager.getInstance().getConnection();
-        String sql = "INSERT INTO T_FFW_USUARIO (cod_usuario, nome_completo, login, senha, cpf) VALUES (SQ_TB_USUARIO.NEXTVAL,?,?,?,?)";
+        String sql = "INSERT INTO T_FFW_USUARIO (cod_usuario, nome_completo, login, senha, cpf, telefone, data_nasc) VALUES (SQ_TB_USUARIO.NEXTVAL,?,?,?,?,?,?)";
 
-        System.out.println("Adicionando usuario: " + usuario.getLogin()+" senha: "+usuario.getSenha());
+        System.out.println("Adicionando usuario: " + usuario.getLogin() + " senha: " + usuario.getSenha());
 
         try {
             stmt = connection.prepareStatement(sql);
@@ -64,6 +75,8 @@ public class OracleUsuarioDao implements UsuarioDao {
             stmt.setString(2, usuario.getLogin());
             stmt.setString(3, usuario.getSenha());
             stmt.setString(4, usuario.getCpf());
+            stmt.setString(5, "00000000");
+            stmt.setDate(6, new java.sql.Date(new Date().getTime()));
             stmt.executeUpdate();
 
             System.out.println("Usuario registrado com sucesso");
@@ -103,6 +116,65 @@ public class OracleUsuarioDao implements UsuarioDao {
         } catch (SQLException e) {
             e.printStackTrace();
             throw new DBException("Erro ao atualizar usuario.");
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void atualizarSenha(Usuario usuario, String novaSenha){
+        PreparedStatement stmt = null;
+
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        String sql = "UPDATE T_FFW_USUARIO SET " +
+                "senha = ? WHERE cod_usuario = ?";
+
+
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, novaSenha);
+            stmt.setInt(2, usuario.getId());
+            stmt.executeUpdate();
+
+            System.out.println("Senha atualizada com sucesso");
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void atualizarDados(Usuario usuario){
+        PreparedStatement stmt = null;
+
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        String sql = "UPDATE T_FFW_USUARIO SET " +
+                "telefone = ?, data_nasc=? WHERE cod_usuario = ?";
+
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, usuario.getTelefone());
+            stmt.setDate(2, java.sql.Date.valueOf(usuario.getDataNasc()));
+            stmt.setInt(3, usuario.getId());
+            stmt.executeUpdate();
+
+            System.out.println("Dados atualizados com sucesso");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         } finally {
             try {
                 stmt.close();
@@ -160,13 +232,32 @@ public class OracleUsuarioDao implements UsuarioDao {
                 String login = rs.getString("login");
                 String senha = rs.getString("senha");
                 String cpf = rs.getString("cpf");
-                user = new Usuario(id, nomeCompleto, login, senha, cpf);
-                System.out.println("Usuário encontrado com sucesso");
+                double saldo = rs.getDouble("saldo");
+                String telefone = rs.getString("telefone");
+                LocalDate dataNasc=null;
+                if(rs.getDate("data_nasc") != null){
+                    dataNasc = rs.getDate("data_nasc").toLocalDate();
+                }else{
+                    dataNasc = LocalDate.now();
+                }
 
+                user = new Usuario(id, nomeCompleto, login, senha, cpf,saldo, telefone, dataNasc);
+
+                ObjetivoFinanceiroDao objetivoFinanceiroDao = DaoFactory.getObjetivoFinanceiroDao();
+                List<ObjetivoFinanceiro> objetivoFinanceiros = objetivoFinanceiroDao.buscarObjetivos(id);
+                user.setObjetivoFinanceiros(objetivoFinanceiros);
+
+                EnderecoDao enderecoDao = DaoFactory.getEnderecoDao();
+                Endereco temp = enderecoDao.buscarEndereco(user.getId());
+                user.setEndereco(temp);
+
+                System.out.println("Usuário encontrado com sucesso");
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (DBException e) {
+            throw new RuntimeException(e);
         } finally {
             try {
                 stmt.close();
@@ -176,6 +267,7 @@ public class OracleUsuarioDao implements UsuarioDao {
                 e.printStackTrace();
             }
         }
+
         return user;
     }
 
@@ -216,5 +308,63 @@ public class OracleUsuarioDao implements UsuarioDao {
             }
         }
         return usuarios;
+    }
+
+    @Override
+    public void realizarSaque(Usuario usuario, double valor) throws DBException {
+        PreparedStatement stmt = null;
+
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        String sql = "UPDATE T_FFW_USUARIO SET " +
+                "saldo = saldo - ? WHERE cod_usuario = ?";
+
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setDouble(1, valor);
+            stmt.setInt(2, usuario.getId());
+            stmt.executeUpdate();
+
+            usuario.decrementarSaldo(valor);
+
+            System.out.println("Saque realizado com sucesso");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void realizarDeposito(Usuario usuario, double valor) throws DBException {
+        PreparedStatement stmt = null;
+
+        Connection connection = ConnectionManager.getInstance().getConnection();
+        String sql = "UPDATE T_FFW_USUARIO SET " +
+                "saldo = saldo + ? WHERE cod_usuario = ?";
+
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setDouble(1, valor);
+            stmt.setInt(2, usuario.getId());
+            stmt.executeUpdate();
+
+            usuario.incrementarSaldo(valor);
+
+            System.out.println("Deposito realizado com sucesso");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

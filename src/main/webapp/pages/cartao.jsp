@@ -1,5 +1,12 @@
+<%@ page import="br.com.fiap.ffw.techffw.model.Usuario" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%
+    Usuario user = (Usuario) session.getAttribute("user");
+
+%>
+
 <html>
 <head>
     <title>Meus cartões</title>
@@ -20,14 +27,17 @@
         <h1>Meus cartões</h1>
         <div class="cartao d-flex flex-column justify-content-center align-items-center">
             <h2>Cartão físico</h2>
-            <img class="cartao-fisico" src="../assets/images/cartao-fisico.svg">
+            <div class="cartao-container">
+                <img class="cartao-fisico" src="../assets/images/cartao-fisico.svg" alt="Imagem do Cartão">
+                <p class="nome-cartao"><%= user.getNome() %></p>
+            </div>
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mt-4 mx-4 fs-3 fw-bold">
             <p>Nome</p>
             <p>Validade</p>
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mx-4 fs-3">
-            <p>Jackie Tequila</p>
+            <p><%=user.getNome()%></p>
             <p>07/27</p>
         </div>
         <div class="d-flex justify-content-between justify-content-md-around mt-4 mx-4 fs-3 fw-bold">
@@ -54,5 +64,14 @@
             </div>
         </div>
     </main>
+    <p class="dir-reservados">© 2024 Todos os direitos reservados</p>
+    <footer>
+        <div class="rodape d-flex justify-content-between align-items-center">
+            <a class="link-footer" href="menu.jsp">
+                <img class="img-footer" src="../assets/icons/menu.svg">
+            </a>
+            <img class="footer-logo ms-2" src="../assets/images/logo.svg">
+        </div>
+    </footer>
 </body>
 </html>

@@ -7,24 +7,14 @@ public class Endereco {
     private String nomeBairro;
     private String nomeCidade;
     private String nomeEstado;
-    private int numeroCasa;
+    private String numeroCasa;
     private String cep;
 
     // Construtores
     private Endereco() {}
 
-    public Endereco(int codEndereco, int codUsuario, String logradouro, String nomeBairro, String nomeCidade, String nomeEstado, int numeroCasa, String cep) {
+    public Endereco(int codEndereco, int codUsuario, String logradouro, String nomeBairro, String nomeCidade, String nomeEstado, String numeroCasa, String cep) {
         this.codEndereco = codEndereco;
-        this.codUsuario = codUsuario;
-        this.logradouro = logradouro;
-        this.nomeBairro = nomeBairro;
-        this.nomeCidade = nomeCidade;
-        this.nomeEstado = nomeEstado;
-        this.numeroCasa = numeroCasa;
-        this.cep = cep;
-    }
-    public Endereco( int codUsuario, String logradouro, String nomeBairro, String nomeCidade, String nomeEstado, int numeroCasa, String cep) {
-
         this.codUsuario = codUsuario;
         this.logradouro = logradouro;
         this.nomeBairro = nomeBairro;
@@ -88,11 +78,11 @@ public class Endereco {
         this.nomeEstado = nomeEstado;
     }
 
-    public int getNumeroCasa() {
+    public String getNumeroCasa() {
         return numeroCasa;
     }
 
-    public void setNumeroCasa(int numeroCasa) {
+    public void setNumeroCasa(String numeroCasa) {
         this.numeroCasa = numeroCasa;
     }
 

@@ -14,8 +14,16 @@
 }
 
 body {
-    background-color: var(--bs-primary);
+    background: linear-gradient(180deg, var(--bs-primary) 0%, var(--bs-secondary) 100%);
     color: var(--bs-light);
+}
+
+main {
+    height: 100vh;
+    margin: 24px 12px;
+    background-color: rgb(217, 217, 217, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
 
 .profile-header {
@@ -75,11 +83,26 @@ body {
 .form-control {
     background-color: var(--bs-light);
     border: none;
-    color: var(--bs-light);
+    color: var(--bs-dark);
 }
 
 .form-control::placeholder {
     color: var(--bs-gray);
+}
+
+.btn {
+    width: 100%;
+    background-color: var(--bs-success);
+    color: var(--bs-light);
+    font-weight: bold;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: var(--bs-info);
 }
 
 .nav-icons {
@@ -96,4 +119,40 @@ body {
 .nav-icons i {
     color: var(--bs-light);
     font-size: 1.5rem;
+}
+.readonly-field{
+    background-color: #e9ecef;
+    border: 2px solid #6c757d;
+    font-weight: bold;
+    cursor: not-allowed;
+}
+
+.dir-reservados {
+    text-align: center;
+    padding-bottom: 64px;
+}
+
+footer {
+    background-color: var(--bs-purple);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.rodape {
+    margin: 0 auto;
+    max-width: 900px;
+    height: 70px;
+    width: 100vw;
+    padding: 16px;
+}
+
+.img-footer {
+    height: 64px;
+    width: 64px;
+}
+
+.footer-logo {
+    height: 42px;
 }

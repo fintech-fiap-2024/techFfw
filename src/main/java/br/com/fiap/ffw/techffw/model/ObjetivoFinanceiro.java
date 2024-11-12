@@ -18,19 +18,6 @@ public class ObjetivoFinanceiro {
         this.valorObjetivo = valorObjetivo;
         this.dataObjetivo = dataObjetivo;
     }
-    public ObjetivoFinanceiro(int codConta, String descricaoObjetivo, double valorObjetivo, LocalDate dataObjetivo) {
-        this.codConta = codConta;
-        this.descricaoObjetivo = descricaoObjetivo;
-        this.valorObjetivo = valorObjetivo;
-        this.dataObjetivo = dataObjetivo;
-    }
-
-    public ObjetivoFinanceiro(String descricaoObjetivo, double valorObjetivo, LocalDate dataObjetivo) {
-
-        this.descricaoObjetivo = descricaoObjetivo;
-        this.valorObjetivo = valorObjetivo;
-        this.dataObjetivo = dataObjetivo;
-    }
     public int getCodObjetivo() {
         return codObjetivo;
     }

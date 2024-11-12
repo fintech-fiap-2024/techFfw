@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
-    <c:if test="${not empty mensagem}">
-        <div class="alert alert-success ms-2 me-2 m-auto">${mensagem}</div>
-    </c:if>
 
+    <c:if test="${param.sucesso == 'true'}">
+        <div class="alert alert-success ms-2 me-2 m-auto">Sucesso ao cadastrar</div>
+    </c:if>
     <c:if test="${not empty erro}">
         <div class="alert alert-danger ms-2 me-2 m-auto">${erro}</div>
+    </c:if>
+    <c:if test="${param.sucesso == 'false'}">
+        <div class="alert alert-danger ms-2 me-2 m-auto">Erro ao cadastrar. Email já cadastrado!</div>
     </c:if>
     <div class="container d-flex flex-column flex-lg-row justify-content-evenly">
         <div class="area-logo">

@@ -4,9 +4,10 @@
 
 <%
     Usuario user = (Usuario) session.getAttribute("user");
-    int saldo = user.getSaldo();
+    double saldo = user.getSaldo();
     float limiteDisponivel = user.getLimiteDisponivel();
     double faturaAtual = 1500.00;
+
 %>
 
 <html>
@@ -30,12 +31,13 @@
         </div>
     </header>
     <main>
-
         <div class="saldo">
             <p>Saldo</p>
-            <img src="../assets/icons/olho-branco.svg">
+            <button class="btn-olho">
+                <img src="../assets/icons/olho-branco.svg" onclick="toggleSaldo()" id="toggle-icon">
+            </button>
         </div>
-        <p class="valor">$ <%=saldo%></p>
+        <p class="valor">R$ <%=saldo%></p>
         <div class="menu-icons d-flex flex-row justify-content-between justify-content-lg-around">
             <div class="d-flex flex-column align-items-center">
                 <a class="menu-icon" href="movimentos.jsp">
@@ -70,14 +72,13 @@
             <p class="titulo">Cartão de Crédito</p>
             <p>Fatura atual</p>
             <p class="valor-fatura">R$<%=faturaAtual%></p>
-            <p class="limite">Limite disponível de R$ <%=limiteDisponivel%>></p>
-            <p class="proximo-pagamento">Próximo pagamento ></p>
-            <p>Quinta-feira, 16 Dez </p>
+            <p class="limite">Limite disponível de R$ <%=limiteDisponivel%></p>
+            <p class="proximo-pagamento">Próximo pagamento: <%=user.getProximoPagamento()%></p>
             <hr>
         </div>
-        <a class="investimentos">
+        <a href="/techFfw/objetivo" class="investimentos">
             <img src="../assets/icons/investimentos.svg">
-            <p>Investimentos</p>
+            <p>Objetivo Financeiro</p>
         </a>
         <p class="novas-funcionalidades">Novas funcionalidades</p>
         <div class="d-md-flex flex-md-row align-items-md-center justify-content-around mb-md-5">
@@ -89,5 +90,19 @@
             <img class="relatorio" src="../assets/images/relatorios.svg">
         </div>
     </main>
+    <script>
+        function toggleSaldo() {
+            const saldoTexto = document.querySelector('.valor');
+            const icon = document.getElementById('toggle-icon');
+
+            if (saldoTexto.innerText === 'R$ <%= saldo %>') {
+                saldoTexto.innerText = 'R$ --------';
+                icon.src = "../assets/icons/olho-fechado.svg";
+            } else {
+                saldoTexto.innerText = 'R$ <%= saldo %>';
+                icon.src = "../assets/icons/olho-branco.svg";
+            }
+        }
+    </script>
 </body>
 </html>
